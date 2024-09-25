@@ -54,7 +54,7 @@ Join our community of developers creating universal apps.
 
 Now that you have successfully run the app, let's modify it.
 
-1. Modify **App bundle Id** in app.json file
+1. Modify **[App bundle Id](https://docs.expo.dev/build-reference/variants/)** in app.json file
 
 ```json
     "ios": {
@@ -63,4 +63,22 @@ Now that you have successfully run the app, let's modify it.
     "android": {
       "package": "com.myapp"
     }
+```
+
+2. Add **[App Icon](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/#add-the-icon-in-app-config)** in app.json file.
+   [Further customization of the Android icon is possible using the android.adaptiveIcon property, which will override both of the previously mentioned settings].(https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/#custom-configuration-tips-for-android-and-ios)
+
+```json
+{
+  "icon": "./assets/images/icon.png"
+}
+```
+
+```json
+  "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#7862E3"
+      }
+    },
 ```
