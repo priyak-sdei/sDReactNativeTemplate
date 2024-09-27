@@ -14,14 +14,16 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.baseSetup"
+      "bundleIdentifier": "com.baseSetup",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#7862E3"
       },
-      "package": "com.baseSetup"
+      "package": "com.baseSetup",
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",

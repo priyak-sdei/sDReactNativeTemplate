@@ -66,7 +66,7 @@ Now that you have successfully run the app, let's modify it.
 ```
 
 2. Add **[App Icon](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/#add-the-icon-in-app-config)** in app.json file.
-   [Further customization of the Android icon is possible using the android.adaptiveIcon property, which will override both of the previously mentioned settings].(https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/#custom-configuration-tips-for-android-and-ios)
+   Further customization of the Android icon is possible using the android.adaptiveIcon property, which will override both of the previously mentioned settings.(https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/#custom-configuration-tips-for-android-and-ios)
 
 ```json
 {
@@ -82,3 +82,19 @@ Now that you have successfully run the app, let's modify it.
       }
     },
 ```
+
+3. Integrate **[EsLint and Husky](https://docs.expo.dev/guides/using-eslint/#setup-instructions-for-sdk-50-and-below) (https://sanjanahumanintech.medium.com/to-integrate-husky-with-a-react-native-134723b94569)**
+
+### Steps:
+
+- 1. run command npx expo lint
+- 2. Run yarn add husky --dev
+- 3. npx husky init
+- 4. Add
+  ```bash
+   npm test
+   #!/bin/sh
+   . "$(dirname "$0")/_/husky.sh"
+   npx eslint . --fix
+  ```
+- 5. Run chmod +x .husky/pre-commit
