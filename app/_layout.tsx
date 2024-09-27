@@ -27,7 +27,9 @@ export default function RootLayout() {
   }, [loaded]);
 
   if (!loaded) {
-    // let data = name;
+    console.log("no-console warn");
+    let data = name;
+    let a = 1;
     return null;
   }
 

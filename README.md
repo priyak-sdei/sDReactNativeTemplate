@@ -92,9 +92,7 @@ Now that you have successfully run the app, let's modify it.
 - 3. npx husky init
 - 4. Add
   ```bash
-   npm test
-   #!/bin/sh
-   . "$(dirname "$0")/_/husky.sh"
-   npx eslint . --fix
+   npm run lint
   ```
 - 5. Run chmod +x .husky/pre-commit
+- 6. Then test by commiting code
