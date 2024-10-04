@@ -23,7 +23,12 @@ const DrawerLayout = () => {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Drawer drawerContent={() => <CustomDrawerComponent />}></Drawer>
+      <Drawer
+        screenOptions={{
+          headerShown: false,
+        }}
+        drawerContent={() => <CustomDrawerComponent />}
+      ></Drawer>
     </GestureHandlerRootView>
   );
 };
