@@ -9,12 +9,9 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: {},
     ecmaVersion: 2020,
     sourceType: "module",
-    project: "./tsconfig.json", // Path to your tsconfig.json file
   },
   settings: {
     react: {
@@ -22,10 +19,8 @@ module.exports = {
     },
   },
   rules: {
-    // General ESLint rules
     "linebreak-style": ["error", "unix"],
     "no-console": "warn",
-    // React Native-specific rules
     "react-native/no-unused-styles": "error",
     "react-native/no-inline-styles": "error",
     "react-native/split-platform-components": "error",
@@ -35,21 +30,19 @@ module.exports = {
     "react-native/no-single-element-style-arrays": "error",
     "react-native/sort-styles": "error",
     "react-native/rn-no-color-literals": "off",
-    // TypeScript-specific rules
+    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
-    // "@typescript-eslint/explicit-module-boundary-types": "off",
-    // "@typescript-eslint/no-explicit-any": "warn",
-    // "@typescript-eslint/no-inferrable-types": "warn",
-    // "@typescript-eslint/no-non-null-assertion": "warn",
-    // "@typescript-eslint/prefer-optional-chain": "warn",
-    // "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-    // "@typescript-eslint/no-empty-function": "warn",
-    // "@typescript-eslint/ban-ts-comment": "warn",
-    // "@typescript-eslint/explicit-function-return-type": "off",
-    //Best Practices
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+
     eqeqeq: 2, //Enforces strict equality checks (=== and !==).
     "no-loop-func": 2, // Disallows function declarations within loops
-    //Stylistic Issues:
     quotes: 0, // Enforces the use of single or double quotes consistently.,
     "react/prop-types": "off",
   },

@@ -9,7 +9,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 
-import { useColorScheme } from "@/hooks/useColorScheme";
+import { useColorScheme } from "@hooks/useColorScheme";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -28,16 +28,22 @@ export default function RootLayout() {
 
   if (!loaded) {
     console.log("no-console warn");
-    let data = name;
+    let data = "name";
     let a = 1;
     return null;
   }
-
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        {/* This Stack will wrap all screens globally */}
+        {/* Nested layout will automatically inherit this structure */}
+        {/* <Stack.Screen name="(auth)" options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" /> */}
       </Stack>
     </ThemeProvider>
   );

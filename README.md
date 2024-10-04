@@ -96,3 +96,4 @@ Now that you have successfully run the app, let's modify it.
   ```
 - 5. Run chmod +x .husky/pre-commit
 - 6. Then test by commiting code
+- 7. Add your own rules in tsconfig.json
