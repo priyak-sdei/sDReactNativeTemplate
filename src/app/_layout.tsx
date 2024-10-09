@@ -1,7 +1,7 @@
-import { Stack } from "expo-router";
-import "react-native-reanimated";
-import { Providers } from "@providers/index";
+import { Providers } from '@/src/lib/providers/index';
+import { Stack } from 'expo-router';
 
+import 'react-native-reanimated';
 export default function RootLayout() {
   return (
     <Providers>
@@ -10,7 +10,7 @@ export default function RootLayout() {
           headerShown: false,
         }}
       >
-        {/* This Stack will wrap all screens globally */}
+        {/* This Stack will wrap all screens globally  */}
         {/* Nested layout will automatically inherit this structure */}
         <Stack.Screen name="+not-found" />
       </Stack>

@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import { View, Text } from "react-native";
-import { router } from "expo-router";
+import { router } from 'expo-router';
+import { useEffect } from 'react';
+import { Text, View } from 'react-native';
 export default function Root() {
   useEffect(() => {
     setTimeout(() => {
-      router.replace("/(auth)/login");
-    }, 2000);
+      router.replace('/(auth)/login');
+    }, 1000);
   }, []);
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View>
       <Text>This is Root Screen</Text>
     </View>
   );

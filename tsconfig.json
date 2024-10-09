@@ -14,8 +14,10 @@
       "@constants/*": ["./src/constants/*"],
       "@assets/*": ["./src/assets/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@providers/*": ["./src/providers/*"],
-      "@lib/*": ["./src/lib/*"]
+      "@providers/*": ["src/lib/providers/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@theme/*": ["./src/theme/*"],
+      "@types/*": ["./src/types/*"]
     }
   },
   "include": ["apps/**/*", ".expo/types/**/*.ts", "expo-env.d.ts", "src/"],
