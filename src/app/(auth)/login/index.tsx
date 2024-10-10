@@ -1,10 +1,11 @@
 import { LoginUser } from '@components/modules/auth/login/Login';
-import { View } from 'react-native';
+
+import MainLayout from '@components/layouts/MainLayout';
 
 export default function Login() {
   return (
-    <View style={{ flex: 1 }}>
+    <MainLayout>
       <LoginUser />
-    </View>
+    </MainLayout>
   );
 }

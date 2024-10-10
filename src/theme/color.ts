@@ -1,6 +1,7 @@
 import { ColorPalette } from '@/src/types/ColorPalette';
 
 export const colors: ColorPalette = {
+  primary_bg: '#F2EEE6',
   white: '#FFFFFF',
   black: '#000000',
   blue: '#295DA1',

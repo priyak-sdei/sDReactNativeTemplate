@@ -1,5 +1,6 @@
 // types.ts
 export interface ColorPalette {
+  primary_bg: string;
   white: string;
   black: string;
   blue: string;

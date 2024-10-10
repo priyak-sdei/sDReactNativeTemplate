@@ -9,8 +9,15 @@
 
   "SD React Native Styles Layout": {
     "scope": "javascript,typescript",
-    "prefix": "rnStyles",
+    "prefix": "sd_rn_styles",
     "body": [
+      "/**",
+      " * Author: Priya Kumari",
+      " * Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
+      " * Description: Stylesheet file created which uses ExtendedTheme interface",
+      " used for light and dark theme colors support",
+      " */",
+      "",
       "import { ExtendedTheme } from '@/src/types/ColorPalette';",
       "import { SPACING, horizontalScale, moderateScale, verticalScale } from '@theme/index';",
       "import { TYPOGRAPHY } from '@theme/typography';",

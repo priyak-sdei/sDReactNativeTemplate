@@ -1,0 +1,33 @@
+{
+  "React Native MainLayout with Theme": {
+    "prefix": "sd_jsx_component",
+    "body": [
+      "/**",
+      " * Author: Priya Kumari",
+      " * Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      " * Description: JSX Element type Component created ${1:Description of the file}",
+      " */",
+      "",
+      "import { ExtendedTheme } from '@/src/types/ColorPalette';",
+      "import { useTheme } from '@react-navigation/native';",
+      "import { View,Text } from 'react-native';",
+      "import createStyles from './${TM_FILENAME_BASE}.styles';",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {",
+      "  ${TM_FILENAME_BASE}_title?: string;",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props): JSX.Element => {",
+      " const { ${TM_FILENAME_BASE}_title = '' } = props;",
+      "",
+      "  const theme = useTheme() as ExtendedTheme;",
+      "  const styles = createStyles(theme);",
+      "",
+      "  return <View style={styles.container}>",
+      "      <Text>{${TM_FILENAME_BASE}_title}</Text>",
+      "</View>;",
+      "}"
+    ],
+    "description": "Creates a React Native layout component with theme support."
+  }
+}

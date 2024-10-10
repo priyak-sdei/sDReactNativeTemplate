@@ -1,3 +1,10 @@
+/**
+ * Author: Priya Kumari
+ * Date: 2024-10-10 17:23:13
+ * Description: Stylesheet file created which uses ExtendedTheme interface
+ used for light and dark theme colors support
+ */
+
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import {
   SPACING,
@@ -7,6 +14,7 @@ import {
 } from '@theme/index';
 import { TYPOGRAPHY } from '@theme/typography';
 import { StyleSheet } from 'react-native';
+
 export const createStyles = ({
   colors,
 }: {
@@ -14,7 +22,7 @@ export const createStyles = ({
 }) => {
   return StyleSheet.create({
     container: {
-      //  flex: 1,
+      backgroundColor: colors.white,
       justifyContent: 'center',
       padding: moderateScale(SPACING.xs),
     },
@@ -22,15 +30,6 @@ export const createStyles = ({
       marginHorizontal: horizontalScale(SPACING.xs),
       marginVertical: verticalScale(SPACING.xs),
     },
-    logoStyle: {
-      alignSelf: 'center',
-
-      height: verticalScale(120),
-      marginBottom: '10%',
-      marginVertical: moderateScale(SPACING.l),
-      width: horizontalScale(150),
-    },
-
     title: {
       ...TYPOGRAPHY.title,
     },
