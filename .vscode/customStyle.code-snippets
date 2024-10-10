@@ -1,0 +1,41 @@
+{
+  // Place your sDReactNativeTemplate workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+
+  "SD React Native Styles Layout": {
+    "scope": "javascript,typescript",
+    "prefix": "rnStyles",
+    "body": [
+      "import { ExtendedTheme } from '@/src/types/ColorPalette';",
+      "import { SPACING, horizontalScale, moderateScale, verticalScale } from '@theme/index';",
+      "import { TYPOGRAPHY } from '@theme/typography';",
+      "import { StyleSheet } from 'react-native';",
+      "",
+      "export const createStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {",
+      "  return StyleSheet.create({",
+      "    container: {",
+      "      backgroundColor: colors.white,",
+      "      flex: 1,",
+      "      justifyContent: 'center',",
+      "      padding: moderateScale(SPACING.xs),",
+      "    },",
+      "    innerContainer: {",
+      "      marginHorizontal: horizontalScale(SPACING.xs),",
+      "      marginVertical: verticalScale(SPACING.xs),",
+      "    },",
+      "    title: {",
+      "      ...TYPOGRAPHY.title,",
+      "    },",
+      "  });",
+      "};",
+      "",
+      "export default createStyles;"
+    ],
+    "description": "Generate styles layout in React Native with ExtendedTheme"
+  }
+}

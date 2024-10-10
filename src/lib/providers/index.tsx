@@ -1,6 +1,6 @@
 import { useColorScheme } from '@hooks/useColorScheme';
 import { ThemeProvider } from '@react-navigation/native';
-import { theme } from '@theme/index';
+import { FONTS, theme } from '@theme/index';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -14,9 +14,7 @@ SplashScreen.preventAutoHideAsync();
 
 export function Providers({ children }: React.PropsWithChildren) {
   const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('@assets/fonts/SpaceMono-Regular.ttf'),
-  });
+  const [loaded] = useFonts(FONTS);
 
   useEffect(() => {
     if (loaded) {

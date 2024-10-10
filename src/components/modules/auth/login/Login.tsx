@@ -9,7 +9,8 @@ export function LoginUser() {
   const styles = createStyles(theme);
   return (
     <View style={styles.container}>
-      <Text>hii</Text>
+      <Text style={styles.title}>Hi this is me. All good</Text>
+
       <Image
         source={IMAGES.logoShort}
         style={styles.logoStyle}

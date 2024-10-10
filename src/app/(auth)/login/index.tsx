@@ -1,5 +1,4 @@
-import { LoginUser } from '@components/modules/login';
-
+import { LoginUser } from '@components/modules/auth/login/Login';
 import { View } from 'react-native';
 
 export default function Login() {
