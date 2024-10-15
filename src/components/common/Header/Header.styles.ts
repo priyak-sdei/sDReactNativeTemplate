@@ -25,6 +25,7 @@ export const createStyles = ({
       backgroundColor: colors.white,
       justifyContent: 'center',
       padding: moderateScale(SPACING.xs),
+      zIndex: 1,
     },
     innerContainer: {
       marginHorizontal: horizontalScale(SPACING.xs),
