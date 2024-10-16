@@ -11,7 +11,7 @@
       "import { ExtendedTheme } from '@/src/types/ColorPalette';",
       "import { useTheme } from '@react-navigation/native';",
       "import { View,Text } from 'react-native';",
-      "import createStyles from './${TM_FILENAME_BASE}.styles';",
+      "import createStyles from './styles';",
       "",
       "interface ${TM_FILENAME_BASE}Props {",
       "  ${TM_FILENAME_BASE}_title?: string;",

@@ -10,7 +10,7 @@ import { useTheme } from '@react-navigation/native';
 import { ReactNode } from 'react';
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import { Label } from '../Label/Label';
-import createStyles from './Button.styles';
+import createStyles from './styles';
 interface ButtonProps {
   title: string;
   leftIcon?: ReactNode;

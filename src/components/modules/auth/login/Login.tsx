@@ -1,7 +1,8 @@
 import { Label } from '@/src/components/common/Label/Label';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
-import { Button } from '@components/common/Button/Button';
+import { Button } from '@components/common/Button';
+import { Input } from '@components/common/Input/Input';
 import { useTheme } from '@react-navigation/native';
 import { Image, Text, View } from 'react-native';
 import { createStyles } from './Login.styles';
@@ -23,6 +24,7 @@ export function LoginUser() {
         onBtnPress={() => {}}
       ></Button>
       <Label level={'smTitle'}>{'Welcome to Fitness X'}</Label>
+      <Input />
 
       {/* <Text>This is Login In Screen</Text>
       <Link href="/register" style={{}}>
