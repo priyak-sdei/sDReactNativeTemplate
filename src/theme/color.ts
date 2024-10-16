@@ -1,16 +1,21 @@
 import { ColorPalette } from '@/src/types/ColorPalette';
 
 export const colors: ColorPalette = {
+  primary: '#302A25',
+  labelColor: 'rgba(48, 42, 37, 0.9)',
+  subTitleColor: '#9F9791',
+  lightTextColor: '#818186',
   primary_bg: '#F2EEE6',
   white: '#FFFFFF',
   black: '#000000',
+
   blue: '#295DA1',
   blueAlpha5: 'rgba(41, 93, 161,0.5)',
   grey: '#555658',
   darkGrey: '#212122',
   btnColor: '#D7D8D9',
   borderColor: '#EFEFF0',
-  labelColor: '#747578',
+
   blackAlpha4: 'rgba(0,0,0,0.4)',
   blackAlpha6: 'rgba(0,0,0,0.6)',
   blackAlpha07: 'rgba(0,0,0,0.07)',

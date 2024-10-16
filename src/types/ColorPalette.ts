@@ -1,5 +1,9 @@
 // types.ts
 export interface ColorPalette {
+  primary: string;
+  labelColor: string;
+  subTitleColor: string;
+  lightTextColor: string;
   primary_bg: string;
   white: string;
   black: string;
@@ -9,7 +13,7 @@ export interface ColorPalette {
   darkGrey: string;
   btnColor: string;
   borderColor: string;
-  labelColor: string;
+
   blackAlpha4: string;
   blackAlpha6: string;
   blackAlpha07: string;
