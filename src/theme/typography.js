@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { moderateScale } from './index';
 export const TYPOGRAPHY = StyleSheet.create({
+  btnText: {
+    fontFamily: 'SEMI_BOLD',
+    fontSize: moderateScale(18),
+  },
   error: {
     fontFamily: 'BOLD',
     fontSize: moderateScale(14),
@@ -13,6 +17,7 @@ export const TYPOGRAPHY = StyleSheet.create({
     fontFamily: 'LIGHT',
     fontSize: moderateScale(16),
   },
+
   title: {
     fontFamily: 'MEDIUM',
     fontSize: moderateScale(18),

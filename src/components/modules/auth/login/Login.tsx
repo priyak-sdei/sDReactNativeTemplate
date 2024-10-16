@@ -1,9 +1,10 @@
+import { Label } from '@/src/components/common/Label/Label';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
+import { Button } from '@components/common/Button/Button';
 import { useTheme } from '@react-navigation/native';
 import { Image, Text, View } from 'react-native';
 import { createStyles } from './Login.styles';
-
 export function LoginUser() {
   const theme = useTheme() as ExtendedTheme;
   const styles = createStyles(theme);
@@ -16,6 +17,12 @@ export function LoginUser() {
         style={styles.logoStyle}
         resizeMode="contain"
       />
+      <Button
+        title={'Login'}
+        showLoading={false}
+        onBtnPress={() => {}}
+      ></Button>
+      <Label level={'smTitle'}>{'Welcome to Fitness X'}</Label>
 
       {/* <Text>This is Login In Screen</Text>
       <Link href="/register" style={{}}>
