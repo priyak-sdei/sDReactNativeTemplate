@@ -1,3 +1,4 @@
+import { DropDownSelector } from '@/src/components/common/DropDown/DropDownSelector';
 import { Label } from '@/src/components/common/Label/Label';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
@@ -31,6 +32,7 @@ export function LoginUser() {
         textInputContainerStyle={{}}
         placeholder="Enter email"
       />
+      <DropDownSelector label="Select Gender" />
 
       {/* <Text>This is Login In Screen</Text>
       <Link href="/register" style={{}}>
