@@ -1,5 +1,4 @@
 import { BottomSheet } from '@/src/components/common/BottomSheet';
-import { DropDownSelector } from '@/src/components/common/DropDown/DropDownSelector';
 import { Label } from '@/src/components/common/Label/Label';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
@@ -16,7 +15,9 @@ export function LoginUser() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hi this is me. All good</Text>
+      <Label style={styles.title} level={'smTitle'}>
+        {'Welcome to Fitness X'}
+      </Label>
 
       <Image
         source={IMAGES.logoShort}
@@ -24,24 +25,36 @@ export function LoginUser() {
         resizeMode="contain"
       />
 
-      <Button
-        title={'Login'}
-        showLoading={false}
-        onBtnPress={() => {}}
-      ></Button>
-
-      <Label level={'smTitle'}>{'Welcome to Fitness X'}</Label>
       <Input
-        labelText="hkghkgkg"
+        labelText="E-Mail"
         sourceRightIcon={IMAGES.cross_round}
         textInputContainerStyle={{}}
         placeholder="Enter email"
       />
-      <DropDownSelector label="Select Gender" />
 
-      <Text onPress={() => showTermsModal(true)}>Terms and conditions</Text>
+      <Input
+        labelText="Password"
+        sourceRightIcon={IMAGES.cross_round}
+        secureTextEntry
+        textInputContainerStyle={{}}
+        placeholder="Enter password"
+      />
 
-      <Text onPress={() => showTermsModal(true)}>Privacy Policy</Text>
+      <View style={styles.container} />
+
+      <Button
+        title={'Login'}
+        showLoading={false}
+        onBtnPress={() => {
+          //Proceed
+        }}
+      />
+
+      <Text style={styles.policyContainer}>
+        By continuing you agree to the{' '}
+        <Text onPress={() => showTermsModal(true)}>Privacy Policy</Text> and
+        <Text onPress={() => showTermsModal(true)}> Terms of use.</Text>
+      </Text>
 
       <BottomSheet visible={termsModal} onDismiss={() => showTermsModal(false)}>
         <Text style={styles.policyTitle}>Awesome 🎉</Text>

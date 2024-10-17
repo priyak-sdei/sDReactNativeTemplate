@@ -15,7 +15,6 @@ export const createStyles = ({
   return StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
       padding: moderateScale(SPACING.xs),
     },
 
@@ -34,6 +33,10 @@ export const createStyles = ({
       marginBottom: '10%',
       marginVertical: moderateScale(SPACING.l),
       width: horizontalScale(150),
+    },
+    policyContainer: {
+      padding: SPACING.m,
+      textAlign: 'center',
     },
     policyContent: {
       fontSize: moderateScale(20),

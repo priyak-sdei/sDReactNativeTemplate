@@ -5,11 +5,11 @@ import { MainLayout } from '@components/layouts/MainLayout';
 
 export default function Login() {
   return (
-    <MainLayout safeAreaTop={false}>
+    <MainLayout safeAreaTop={true}>
       <Header
-        backgroundImage={require('../../../assets/images/banner.jpeg')}
+        // backgroundImage={require('../../../assets/images/banner.jpeg')}
         title="Login"
-        safeAreaTop={true}
+        // safeAreaTop={true}
       />
       <MainLayout.Body variant="fixed">
         <LoginUser />
