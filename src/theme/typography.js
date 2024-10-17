@@ -18,6 +18,10 @@ export const TYPOGRAPHY = StyleSheet.create({
     fontSize: moderateScale(16),
   },
 
+  textInput: {
+    fontFamily: 'MEDIUM',
+    fontSize: moderateScale(16),
+  },
   title: {
     fontFamily: 'MEDIUM',
     fontSize: moderateScale(18),

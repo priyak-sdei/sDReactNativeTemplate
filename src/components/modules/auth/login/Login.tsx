@@ -1,9 +1,10 @@
 import { BottomSheet } from '@/src/components/common/BottomSheet';
+import { DropDownSelector } from '@/src/components/common/DropDown/DropDownSelector';
 import { Label } from '@/src/components/common/Label/Label';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
 import { Button } from '@components/common/Button';
-import { Input } from '@components/common/Input/Input';
+import { Input } from '@components/common/Input';
 import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import { Image, Text, View } from 'react-native';
@@ -30,7 +31,13 @@ export function LoginUser() {
       ></Button>
 
       <Label level={'smTitle'}>{'Welcome to Fitness X'}</Label>
-      <Input />
+      <Input
+        labelText="hkghkgkg"
+        sourceRightIcon={IMAGES.cross_round}
+        textInputContainerStyle={{}}
+        placeholder="Enter email"
+      />
+      <DropDownSelector label="Select Gender" />
 
       <Text onPress={() => showTermsModal(true)}>Terms and conditions</Text>
 
