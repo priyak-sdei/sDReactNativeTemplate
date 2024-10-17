@@ -5,8 +5,9 @@ export const SPACING = {
   xs: 14,
   s: 16,
   sm: 18,
-  m: 24,
-  l: 32,
-  xl: 40,
-  xxl: 50,
+  m: 20,
+  l: 24,
+  xl: 32,
+  xxl: 40,
+  xxxl: 50,
 };

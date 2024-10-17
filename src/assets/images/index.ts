@@ -4,5 +4,5 @@ export const IMAGES = {
   bell: require('./menu/bell.png'),
   gallery: require('./common/gallery/gallery.png'),
   camera: require('./common/camera/camera.png'),
-  lock: require('./icon/locked.png'),
+  cross_round: require('./icon/crossIconRound.png'),
 };
