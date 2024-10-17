@@ -6,30 +6,39 @@
  */
 
 import { ExtendedTheme } from '@/src/types/ColorPalette';
-import {
-  SPACING,
-  horizontalScale,
-  moderateScale,
-  verticalScale,
-} from '@theme/index';
+import { SPACING, moderateScale } from '@theme/index';
 import { TYPOGRAPHY } from '@theme/typography';
 import { StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-export const createStyles = ({
-  colors,
-}: {
-  colors: ExtendedTheme['colors'];
-}) => {
+export const useStyles = (
+  { colors }: { colors: ExtendedTheme['colors'] },
+  safeAreaTop?: boolean,
+) => {
+  const insets = useSafeAreaInsets();
+
   return StyleSheet.create({
+    centerContainer: {
+      alignItems: 'center',
+      flex: 1,
+      justifyContent: 'center',
+    },
     container: {
       backgroundColor: colors.white,
-      justifyContent: 'center',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
       padding: moderateScale(SPACING.xs),
-      zIndex: 1,
     },
-    innerContainer: {
-      marginHorizontal: horizontalScale(SPACING.xs),
-      marginVertical: verticalScale(SPACING.xs),
+    imageContainer: {
+      height: moderateScale(200),
+      paddingTop: safeAreaTop ? insets.top : null,
+    },
+    leftContainer: {
+      flex: 0.5,
+    },
+    rightContainer: {
+      flex: 0.5,
     },
     title: {
       ...TYPOGRAPHY.title,
@@ -37,4 +46,4 @@ export const createStyles = ({
   });
 };
 
-export default createStyles;
+export default useStyles;

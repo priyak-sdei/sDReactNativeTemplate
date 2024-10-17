@@ -14,9 +14,14 @@ export const createStyles = ({
 }) => {
   return StyleSheet.create({
     container: {
-      //  flex: 1,
+      flex: 1,
       justifyContent: 'center',
       padding: moderateScale(SPACING.xs),
+    },
+
+    contentContainer: {
+      alignItems: 'center',
+      flex: 1,
     },
     innerContainer: {
       marginHorizontal: horizontalScale(SPACING.xs),
@@ -30,7 +35,11 @@ export const createStyles = ({
       marginVertical: moderateScale(SPACING.l),
       width: horizontalScale(150),
     },
-
+    policyContent: {
+      fontSize: moderateScale(20),
+      paddingTop: moderateScale(40),
+    },
+    policyTitle: { fontSize: moderateScale(24) },
     title: {
       ...TYPOGRAPHY.title,
     },

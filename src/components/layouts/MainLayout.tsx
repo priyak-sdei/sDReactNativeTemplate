@@ -1,39 +1,39 @@
-import type { ReactNode } from 'react';
 import {
   KeyboardAvoidingView,
   KeyboardAvoidingViewProps,
   Platform,
   StatusBar,
   StyleProp,
-  StyleSheet,
   View,
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import type { KeyboardAwareScrollViewProps } from 'react-native-keyboard-aware-scroll-view';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Header } from '../common/Header/Header';
+import { ExtendedTheme } from '@/src/types/ColorPalette';
+import { useTheme } from '@react-navigation/native';
+import { ReactNode } from 'react';
+import {
+  KeyboardAwareScrollView,
+  KeyboardAwareScrollViewProps,
+} from 'react-native-keyboard-aware-scroll-view';
+import useStyles from './Layouts.styles';
 
-type MainLayoutProps = ViewProps & {
-  variant?: 'fixed' | 'scroll';
+interface MainLayoutProps extends ViewProps {
   barStyle?: 'light-content' | 'dark-content';
   safeAreaTop?: boolean;
-  showHeader?: boolean;
   safeAreaBottom?: boolean;
-};
+}
 
+// It should be used to provide status bar and safe area to the screen
 export const MainLayout = ({
-  variant = 'fixed',
   barStyle = 'dark-content',
-  showHeader,
   children,
   safeAreaTop = true,
   safeAreaBottom = false,
   ...rest
 }: MainLayoutProps) => {
-  const areaInsets = useSafeAreaInsets();
+  const theme = useTheme() as ExtendedTheme;
+  const styles = useStyles({ safeAreaBottom, safeAreaTop, ...theme });
   return (
     <>
       <StatusBar
@@ -41,30 +41,21 @@ export const MainLayout = ({
         translucent
         backgroundColor="transparent"
       />
-      <View
-        style={[
-          styles.container,
-          // eslint-disable-next-line react-native/no-inline-styles
-          {
-            paddingTop: safeAreaTop ? areaInsets.top : 0,
-            paddingBottom: safeAreaBottom ? areaInsets.bottom : 0,
-          },
-        ]}
-        {...rest}
-      >
-        {showHeader && <Header />}
-        <MainLayoutContainer variant={variant}>{children}</MainLayoutContainer>
+      <View style={styles.safeAreaContainer} {...rest}>
+        {children}
       </View>
     </>
   );
 };
 
-type MainLayoutContainerProps = KeyboardAvoidingViewProps &
-  KeyboardAwareScrollViewProps & {
-    style?: StyleProp<ViewStyle>;
-    children?: ReactNode;
-    variant?: 'fixed' | 'scroll';
-  };
+interface MainLayoutContainerProps
+  extends KeyboardAvoidingViewProps,
+    KeyboardAwareScrollViewProps {
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
+  variant?: 'fixed' | 'scroll';
+}
+// It should be user for screen body i.e. between header and footer
 const MainLayoutContainer = ({
   style,
   children,
@@ -72,10 +63,12 @@ const MainLayoutContainer = ({
   ...rest
 }: MainLayoutContainerProps) => {
   const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0;
+  const theme = useTheme() as ExtendedTheme;
+  const styles = useStyles(theme);
   return variant === 'fixed' ? (
     <KeyboardAvoidingView
       style={[styles.container, style]}
-      behavior="position"
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={keyboardVerticalOffset}
       {...rest}
     >
@@ -92,8 +85,4 @@ const MainLayoutContainer = ({
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+MainLayout.Body = MainLayoutContainer;
