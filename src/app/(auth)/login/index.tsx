@@ -9,6 +9,7 @@ export default function Login() {
       <Header
         // backgroundImage={require('../../../assets/images/banner.jpeg')}
         title="Login"
+        leftIcon={<></>}
         // safeAreaTop={true}
       />
       <MainLayout.Body variant="fixed">

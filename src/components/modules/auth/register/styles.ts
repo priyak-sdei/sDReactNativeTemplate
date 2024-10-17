@@ -43,7 +43,6 @@ export const createStyles = ({
       paddingTop: moderateScale(40),
     },
     policyTitle: { fontSize: moderateScale(24) },
-    signUpText: { textAlign: 'center' },
     title: {
       ...TYPOGRAPHY.title,
     },

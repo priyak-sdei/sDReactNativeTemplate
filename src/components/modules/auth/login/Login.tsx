@@ -5,6 +5,7 @@ import { IMAGES } from '@assets/images/index';
 import { Button } from '@components/common/Button';
 import { Input } from '@components/common/Input';
 import { useTheme } from '@react-navigation/native';
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import { createStyles } from './Login.styles';
@@ -28,7 +29,6 @@ export function LoginUser() {
       <Input
         labelText="E-Mail"
         sourceRightIcon={IMAGES.cross_round}
-        textInputContainerStyle={{}}
         placeholder="Enter email"
       />
 
@@ -36,9 +36,17 @@ export function LoginUser() {
         labelText="Password"
         sourceRightIcon={IMAGES.cross_round}
         secureTextEntry
-        textInputContainerStyle={{}}
         placeholder="Enter password"
       />
+
+      <Text
+        style={styles.signUpText}
+        onPress={() => {
+          router.navigate('/(auth)/register');
+        }}
+      >
+        New Here? Sign Up
+      </Text>
 
       <View style={styles.container} />
 
@@ -50,10 +58,8 @@ export function LoginUser() {
         }}
       />
 
-      <Text style={styles.policyContainer}>
-        By continuing you agree to the{' '}
-        <Text onPress={() => showTermsModal(true)}>Privacy Policy</Text> and
-        <Text onPress={() => showTermsModal(true)}> Terms of use.</Text>
+      <Text style={styles.policyContainer} onPress={() => showTermsModal(true)}>
+        By continuing you agree to the Privacy Policy and Terms of use.
       </Text>
 
       <BottomSheet visible={termsModal} onDismiss={() => showTermsModal(false)}>

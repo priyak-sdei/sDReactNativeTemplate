@@ -27,6 +27,7 @@ export const useStyles = (
       backgroundColor: colors.white,
       borderBottomWidth: StyleSheet.hairlineWidth,
       flexDirection: 'row',
+      height: moderateScale(60),
       justifyContent: 'space-between',
       padding: moderateScale(SPACING.xs),
     },
