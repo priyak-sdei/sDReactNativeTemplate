@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /**
  * Author: Priya Kumari
  * Date: 2024-10-17 12:12:33
@@ -8,9 +9,10 @@ import { colors } from '@/src/theme';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useTheme } from '@react-navigation/native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Label } from '../Label/Label';
+import { DropDownPicker } from './DropDownPicker';
 import createStyles from './styles';
 
 interface dropDownOptions {
@@ -26,8 +28,8 @@ interface SelectedItems {
 }
 interface DropDownSelectorProps {
   label: string;
-  options?: dropDownOptions[];
-  selectedValue: string;
+  options: dropDownOptions[];
+  selectedValue?: string;
   onOptionSelect: (data: dropDownOptions) => void;
   errorMessage?: string;
   multiSelection?: boolean;
@@ -48,10 +50,17 @@ export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
     options = [],
     errorMessage = '',
     multiSelection = false,
+    selectedValue,
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
   const styles = createStyles(theme);
+
+  useEffect(() => {
+    if (selectedValue) {
+      setSelectedItems(options.filter(item => item.value === selectedValue));
+    }
+  }, []);
 
   const onItemSelected = (item: SelectedItems) => {
     if (multiSelection) {
@@ -82,12 +91,31 @@ export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
           <Label style={styles.labelStyle}>{label} </Label>
           <View style={styles.groupContainer}>
             <Label numberOfLines={1} style={styles.valueStyle}>
-              Value
+              {selectedItems.length === 0
+                ? ''
+                : selectedItems.length === 1
+                ? selectedItems[0].value
+                : `${selectedItems.length} selected`}
             </Label>
             <FontAwesome6 name="angle-right" size={22} color={colors.primary} />
           </View>
         </View>
       </TouchableOpacity>
+      {errorMessage && <Label style={styles.errorStyle}>{errorMessage}</Label>}
+
+      <DropDownPicker
+        multiSelection={multiSelection}
+        options={options}
+        selectedOption={selectedItems}
+        showPicker={showOptions}
+        hideModal={() => {
+          setShowOptions(false);
+        }}
+        onItemSelected={item => {
+          onItemSelected(item);
+          onOptionSelect(item);
+        }}
+      />
     </View>
   );
 };
