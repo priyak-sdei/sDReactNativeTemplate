@@ -32,7 +32,16 @@ export function LoginUser() {
         textInputContainerStyle={{}}
         placeholder="Enter email"
       />
-      <DropDownSelector label="Select Gender" />
+      <DropDownSelector
+        label="Select Gender"
+        options={[
+          { key: 'male', value: 'Male' },
+          { key: 'female', value: 'FeMale' },
+        ]}
+        onOptionSelect={option => console.log(option, 'Optionnn')}
+        multiSelection={true}
+        selectedValue={'FeMale'}
+      />
 
       {/* <Text>This is Login In Screen</Text>
       <Link href="/register" style={{}}>

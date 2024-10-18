@@ -6,7 +6,7 @@ export const TYPOGRAPHY = StyleSheet.create({
     fontSize: moderateScale(18),
   },
   error: {
-    fontFamily: 'BOLD',
+    fontFamily: 'REGULAR',
     fontSize: moderateScale(14),
   },
   label: {
