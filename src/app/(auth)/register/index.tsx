@@ -4,11 +4,11 @@ import { MainLayout } from '@components/layouts/MainLayout';
 
 export default function Register() {
   return (
-    <MainLayout safeAreaTop={true}>
+    <MainLayout safeAreaBottom={true} safeAreaTop={false}>
       <Header
-        // backgroundImage={require('../../../assets/images/banner.jpeg')}
+        backgroundImage={require('../../../assets/images/banner.jpeg')}
         title="Register"
-        // safeAreaTop={true}
+        safeAreaTop={true}
       />
       <MainLayout.Body variant="fixed">
         <RegisterScreen />

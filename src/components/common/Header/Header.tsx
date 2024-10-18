@@ -29,10 +29,12 @@ export const Header = ({
   const theme = useTheme() as ExtendedTheme;
   const styles = useStyles(theme, safeAreaTop);
 
+  const isLargeHeader = !!backgroundImage;
+
   return (
     <ImageBackground
       source={backgroundImage}
-      style={[styles.container, backgroundImage && styles.imageContainer]}
+      style={[styles.container, isLargeHeader && styles.containerAddOn]}
     >
       <Pressable
         style={styles.leftContainer}
@@ -42,7 +44,12 @@ export const Header = ({
           <Image source={require('../../../assets/images/back/back.png')} />
         )}
       </Pressable>
-      <View style={styles.centerContainer}>
+      <View
+        style={[
+          styles.titleContainer,
+          isLargeHeader && styles.titleContainerAddOn,
+        ]}
+      >
         {centerComponent ?? (
           <Text numberOfLines={1} style={styles.title}>
             {title}

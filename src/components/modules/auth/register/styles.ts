@@ -39,7 +39,7 @@ export const createStyles = ({
       textAlign: 'center',
     },
     policyContent: {
-      fontSize: moderateScale(20),
+      fontSize: moderateScale(18),
       paddingTop: moderateScale(40),
     },
     policyTitle: { fontSize: moderateScale(24) },

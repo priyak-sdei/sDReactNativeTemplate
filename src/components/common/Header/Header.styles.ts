@@ -18,20 +18,15 @@ export const useStyles = (
   const insets = useSafeAreaInsets();
 
   return StyleSheet.create({
-    centerContainer: {
-      alignItems: 'center',
-      flex: 1,
-      justifyContent: 'center',
-    },
     container: {
       backgroundColor: colors.white,
       borderBottomWidth: StyleSheet.hairlineWidth,
       flexDirection: 'row',
-      height: moderateScale(60),
       justifyContent: 'space-between',
+      minHeight: moderateScale(60),
       padding: moderateScale(SPACING.xs),
     },
-    imageContainer: {
+    containerAddOn: {
       height: moderateScale(200),
       paddingTop: safeAreaTop ? insets.top : null,
     },
@@ -43,6 +38,15 @@ export const useStyles = (
     },
     title: {
       ...TYPOGRAPHY.title,
+    },
+    titleContainer: {
+      alignItems: 'center',
+      flex: 1,
+      justifyContent: 'center',
+    },
+    titleContainerAddOn: {
+      alignItems: 'flex-start',
+      justifyContent: 'flex-end',
     },
   });
 };
