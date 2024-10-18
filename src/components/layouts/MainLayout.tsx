@@ -28,8 +28,8 @@ interface MainLayoutProps extends ViewProps {
 export const MainLayout = ({
   barStyle = 'dark-content',
   children,
-  safeAreaTop = true,
-  safeAreaBottom = false,
+  safeAreaTop = false,
+  safeAreaBottom = true,
   ...rest
 }: MainLayoutProps) => {
   const theme = useTheme() as ExtendedTheme;

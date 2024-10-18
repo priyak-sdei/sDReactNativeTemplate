@@ -1,20 +1,21 @@
-import { LoginUser } from '@components/modules/auth/login/Login';
-
 import { Header } from '@/src/components/common/Header/Header';
 import { MainLayout } from '@components/layouts/MainLayout';
 
 export default function Login() {
   return (
-    <MainLayout safeAreaTop={true}>
+    <MainLayout>
       <Header
+        //showLeftIcon={false}
         // backgroundImage={require('../../../assets/images/banner.jpeg')}
-        title="Login"
+        // title="Login"
+        headerHeight={'34%'}
+        headerTitle={' Reliable , Innovative Solution For Your Business'}
         // leftIcon={<></>}
         // safeAreaTop={true}
       />
-      <MainLayout.Body variant="fixed">
+      {/* <MainLayout.Body variant="fixed">
         <LoginUser />
-      </MainLayout.Body>
+      </MainLayout.Body> */}
     </MainLayout>
   );
 }
