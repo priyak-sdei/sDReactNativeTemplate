@@ -16,6 +16,9 @@ export const createStyles = ({
   colors: ExtendedTheme['colors'];
 }) => {
   return StyleSheet.create({
+    container: {
+      paddingVertical: SPACING.xxxxs,
+    },
     hightLightStyle: {
       borderColor: colors.primary,
       borderWidth: moderateScale(1),

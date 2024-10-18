@@ -63,7 +63,7 @@ export const Input = (props: InputProps): JSX.Element => {
   };
 
   return (
-    <View style={{}}>
+    <View style={styles.container}>
       {labelText && (
         <View style={styles.labelContainer}>
           <Label level="xsTitle">{labelText}</Label>

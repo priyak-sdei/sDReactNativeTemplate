@@ -1,9 +1,18 @@
-import { Text, View } from 'react-native';
+import { Header } from '@/src/components/common/Header/Header';
+import { RegisterScreen } from '@/src/components/modules/auth/register';
+import { MainLayout } from '@components/layouts/MainLayout';
 
 export default function Register() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>This is Register Screen</Text>
-    </View>
+    <MainLayout safeAreaBottom={true} safeAreaTop={false}>
+      <Header
+        backgroundImage={require('../../../assets/images/banner.jpeg')}
+        title="Register"
+        safeAreaTop={true}
+      />
+      <MainLayout.Body variant="fixed">
+        <RegisterScreen />
+      </MainLayout.Body>
+    </MainLayout>
   );
 }
