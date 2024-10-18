@@ -11,7 +11,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useTheme } from '@react-navigation/native';
 import { FlatList, Modal, TouchableOpacity, View } from 'react-native';
 import { Button } from '../Button';
-import { Label } from '../Label/Label';
+import { Label } from '../Text';
 import createStyles from './styles';
 
 interface DropDownPickerProps {

@@ -6,4 +6,5 @@ export const IMAGES = {
   camera: require('./common/camera/camera.png'),
   cross_round: require('./icon/crossIconRound.png'),
   left_arrow: require('./icon/arrowLeft.png'),
+  header_bg: require('./icon/header_bg.png'),
 };

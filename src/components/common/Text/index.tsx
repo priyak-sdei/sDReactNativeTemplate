@@ -7,22 +7,22 @@
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { useTheme } from '@react-navigation/native';
 import React from 'react';
-import { Text, TextProps } from 'react-native';
-import createStyles from './Label.styles';
+import { Text as LabelText, TextProps } from 'react-native';
+import useStyles from './styles';
 
 interface LabelProps extends TextProps {
-  level?: keyof ReturnType<typeof createStyles>;
+  level?: keyof ReturnType<typeof useStyles>;
 }
 
-export const Label = (props: LabelProps): JSX.Element => {
+export const Text = (props: LabelProps): JSX.Element => {
   const { level = '', style = {} } = props;
   const theme = useTheme() as ExtendedTheme;
-  const styles = createStyles(theme);
+  const styles = useStyles(theme);
   // Check if `style` is an array or object and convert accordingly
   const customStyle = Array.isArray(style)
     ? Object.assign({}, ...style)
     : style || {};
 
   const mergedStyles = { ...styles[level], ...customStyle };
-  return <Text {...props} style={mergedStyles} />;
+  return <LabelText {...props} style={mergedStyles} />;
 };

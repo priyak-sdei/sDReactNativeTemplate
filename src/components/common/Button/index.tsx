@@ -9,8 +9,8 @@ import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { useTheme } from '@react-navigation/native';
 import { ReactNode } from 'react';
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
-import { Label } from '../Label/Label';
-import createStyles from './styles';
+import { Text } from '../Text';
+import useStyles from './styles';
 interface ButtonProps {
   title: string;
   leftIcon?: ReactNode;
@@ -29,7 +29,7 @@ export const Button = (props: ButtonProps): JSX.Element => {
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
-  const styles = createStyles(theme);
+  const styles = useStyles(theme);
 
   return (
     <TouchableOpacity style={styles.container} onPress={onBtnPress}>
@@ -39,7 +39,7 @@ export const Button = (props: ButtonProps): JSX.Element => {
           {showLoading ? (
             <ActivityIndicator color={colors.white} size={'small'} />
           ) : (
-            <Label style={styles.title}>{title}</Label>
+            <Text style={styles.title}>{title}</Text>
           )}
         </View>
         <View style={styles.rightContainer}>{rightIcon}</View>

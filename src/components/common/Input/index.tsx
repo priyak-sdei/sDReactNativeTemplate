@@ -22,7 +22,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { Label } from '../Label/Label';
+import { Text } from '../Text';
 import createStyles from './styles';
 
 interface InputProps extends TextInputProps {
@@ -66,7 +66,7 @@ export const Input = (props: InputProps): JSX.Element => {
     <View style={styles.container}>
       {labelText && (
         <View style={styles.labelContainer}>
-          <Label level="xsTitle">{labelText}</Label>
+          <Text level="xsTitle">{labelText}</Text>
         </View>
       )}
       <View

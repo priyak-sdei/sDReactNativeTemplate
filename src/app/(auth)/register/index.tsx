@@ -1,4 +1,4 @@
-import { Header } from '@/src/components/common/Header/Header';
+import { Header } from '@/src/components/common/Header';
 import { RegisterScreen } from '@/src/components/modules/auth/register';
 import { MainLayout } from '@components/layouts/MainLayout';
 

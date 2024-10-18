@@ -1,21 +1,20 @@
-import { Header } from '@/src/components/common/Header/Header';
+import { IMAGES } from '@/src/assets/images';
+import { Header } from '@/src/components/common/Header';
+import { LoginUser } from '@/src/components/modules/auth/login/Login';
 import { MainLayout } from '@components/layouts/MainLayout';
 
 export default function Login() {
   return (
     <MainLayout>
       <Header
-        //showLeftIcon={false}
-        // backgroundImage={require('../../../assets/images/banner.jpeg')}
-        // title="Login"
-        headerHeight={'34%'}
-        headerTitle={' Reliable , Innovative Solution For Your Business'}
-        // leftIcon={<></>}
-        // safeAreaTop={true}
+        extendedHeaderImage={IMAGES.logoFull}
+        canGoBack={false}
+        showLeftIcon={false}
+        backgroundImage={IMAGES.header_bg}
       />
-      {/* <MainLayout.Body variant="fixed">
+      <MainLayout.Body variant="fixed">
         <LoginUser />
-      </MainLayout.Body> */}
+      </MainLayout.Body>
     </MainLayout>
   );
 }

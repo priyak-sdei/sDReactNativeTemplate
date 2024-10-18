@@ -1,4 +1,4 @@
-import { Label } from '@/src/components/common/Label/Label';
+import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
 import { Button } from '@components/common/Button';
@@ -12,9 +12,9 @@ export function RegisterScreen() {
 
   return (
     <View style={styles.container}>
-      <Label style={styles.title} level={'smTitle'}>
+      <Text style={styles.title} level={'smTitle'}>
         {'Welcome to Fitness X'}
-      </Label>
+      </Text>
 
       <Image
         source={IMAGES.logoShort}

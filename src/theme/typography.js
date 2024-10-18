@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { moderateScale } from './index';
+import { moderateScale, SPACING } from './index';
 export const TYPOGRAPHY = StyleSheet.create({
   btnText: {
     fontFamily: 'SEMI_BOLD',
@@ -25,5 +25,9 @@ export const TYPOGRAPHY = StyleSheet.create({
   title: {
     fontFamily: 'MEDIUM',
     fontSize: moderateScale(18),
+  },
+  headerTitle: {
+    fontFamily: 'SEMI_BOLD',
+    fontSize: moderateScale(SPACING.l),
   },
 });

@@ -9,11 +9,7 @@ import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { SPACING, moderateScale } from '@theme/index';
 import { StyleSheet } from 'react-native';
 
-export const createStyles = ({
-  colors,
-}: {
-  colors: ExtendedTheme['colors'];
-}) => {
+export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
   return StyleSheet.create({
     lgTitle: {
       color: colors.primary,
@@ -38,4 +34,4 @@ export const createStyles = ({
   });
 };
 
-export default createStyles;
+export default useStyles;

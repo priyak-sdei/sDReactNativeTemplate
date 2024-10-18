@@ -10,11 +10,7 @@ import { SPACING, moderateScale, verticalScale } from '@theme/index';
 import { TYPOGRAPHY } from '@theme/typography';
 import { StyleSheet } from 'react-native';
 
-export const createStyles = ({
-  colors,
-}: {
-  colors: ExtendedTheme['colors'];
-}) => {
+export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
   return StyleSheet.create({
     container: {
       backgroundColor: colors.primary,
@@ -48,4 +44,4 @@ export const createStyles = ({
   });
 };
 
-export default createStyles;
+export default useStyles;

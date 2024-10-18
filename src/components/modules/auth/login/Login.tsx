@@ -1,5 +1,5 @@
 import { BottomSheet } from '@/src/components/common/BottomSheet';
-import { Label } from '@/src/components/common/Label/Label';
+import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { IMAGES } from '@assets/images/index';
 import { Button } from '@components/common/Button';
@@ -7,7 +7,7 @@ import { Input } from '@components/common/Input';
 import { useTheme } from '@react-navigation/native';
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { createStyles } from './Login.styles';
 export function LoginUser() {
   const theme = useTheme() as ExtendedTheme;
@@ -16,9 +16,9 @@ export function LoginUser() {
 
   return (
     <View style={styles.container}>
-      <Label style={styles.title} level={'smTitle'}>
+      <Text style={styles.title} level={'smTitle'}>
         {'Welcome to Fitness X'}
-      </Label>
+      </Text>
 
       <Image
         source={IMAGES.logoShort}
@@ -71,7 +71,6 @@ export function LoginUser() {
           used as a placeholder before the final copy is available.
         </Text>
       </BottomSheet>
-
 
       {/* <Text>This is Login In Screen</Text>
       <Link href="/register" style={{}}>

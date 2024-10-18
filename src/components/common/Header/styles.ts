@@ -5,85 +5,69 @@
  used for light and dark theme colors support
  */
 
+import { moderateScale, SPACING } from '@/src/theme';
+import { TYPOGRAPHY } from '@/src/theme/typography';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
-import { SPACING, moderateScale } from '@theme/index';
-import { TYPOGRAPHY } from '@theme/typography';
 import { DimensionValue, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export const useStyles = (
   { colors }: { colors: ExtendedTheme['colors'] },
-  safeAreaTop?: boolean,
   headerHeight?: DimensionValue,
 ) => {
   const insets = useSafeAreaInsets();
 
   return StyleSheet.create({
-    container: {
-      backgroundColor: colors.white,
-      borderBottomWidth: StyleSheet.hairlineWidth,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      minHeight: moderateScale(60),
-      padding: moderateScale(SPACING.xs),
-    },
-    containerAddOn: {
-      height: moderateScale(200),
-      paddingTop: safeAreaTop ? insets.top : null,
-    },
     containerHeader: {
       backgroundColor: colors.primary,
       borderBottomWidth: StyleSheet.hairlineWidth,
       height: headerHeight,
       paddingHorizontal: moderateScale(SPACING.xs),
-      paddingTop: moderateScale(SPACING.xxxxl),
+      paddingTop: moderateScale(insets.top),
     },
-
     containerHeaderRound: {
       borderBottomLeftRadius: moderateScale(SPACING.l),
       borderBottomRightRadius: moderateScale(SPACING.l),
     },
     headerTitle: {
-      ...TYPOGRAPHY.title,
+      ...TYPOGRAPHY.headerTitle,
       color: colors.white,
-      flex: 1,
-      fontFamily: 'SEMI_BOLD',
-      fontSize: moderateScale(24),
     },
     imageStyle: {
-      height: moderateScale(30),
-      width: moderateScale(30),
+      height: moderateScale(SPACING.xl),
+      width: moderateScale(SPACING.xl),
     },
     leftContainer: {
       flex: 0.5,
     },
-
     rightContainer: {
       alignItems: 'flex-end',
       flex: 0.5,
     },
+    logoImage: {
+      width: moderateScale(150),
+      height: moderateScale(SPACING.xxxl),
+    },
     rowHeader: {
       flexDirection: 'row',
-      //flex: 1,
       justifyContent: 'space-between',
       paddingBottom: moderateScale(SPACING.s),
+      alignItems: 'center',
     },
     title: {
       ...TYPOGRAPHY.title,
       color: colors.white,
       flex: 1,
       fontFamily: 'SEMI_BOLD',
-      fontSize: moderateScale(24),
+      fontSize: moderateScale(SPACING.l),
       textAlign: 'center',
     },
-    titleContainer: {
-      alignItems: 'center',
+
+    extendedHeaderStyle: {
       flex: 1,
-      justifyContent: 'center',
-    },
-    titleContainerAddOn: {
-      alignItems: 'flex-start',
       justifyContent: 'flex-end',
+      paddingVertical: moderateScale(SPACING.s),
+      alignItems: 'center',
     },
   });
 };

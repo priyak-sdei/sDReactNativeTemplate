@@ -11,7 +11,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useTheme } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { Label } from '../Label/Label';
+import { Text } from '../Text';
 import { DropDownPicker } from './DropDownPicker';
 import createStyles from './styles';
 
@@ -88,20 +88,20 @@ export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
         onPress={() => setShowOptions(true)}
       >
         <View style={styles.innerContainer}>
-          <Label style={styles.labelStyle}>{label} </Label>
+          <Text style={styles.labelStyle}>{label} </Text>
           <View style={styles.groupContainer}>
-            <Label numberOfLines={1} style={styles.valueStyle}>
+            <Text numberOfLines={1} style={styles.valueStyle}>
               {selectedItems.length === 0
                 ? ''
                 : selectedItems.length === 1
                 ? selectedItems[0].value
                 : `${selectedItems.length} selected`}
-            </Label>
+            </Text>
             <FontAwesome6 name="angle-right" size={22} color={colors.primary} />
           </View>
         </View>
       </TouchableOpacity>
-      {errorMessage && <Label style={styles.errorStyle}>{errorMessage}</Label>}
+      {errorMessage && <Text style={styles.errorStyle}>{errorMessage}</Text>}
 
       <DropDownPicker
         multiSelection={multiSelection}

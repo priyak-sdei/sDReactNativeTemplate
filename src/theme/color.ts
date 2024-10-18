@@ -2,7 +2,7 @@ import { ColorPalette } from '@/src/types/ColorPalette';
 
 export const colors: ColorPalette = {
   primary: '#302A25',
-  secondary: '#F09E93',
+  secondary: '#d92029',
   labelColor: 'rgba(48, 42, 37, 0.9)',
   subTitleColor: '#9F9791',
   lightTextColor: '#818186',

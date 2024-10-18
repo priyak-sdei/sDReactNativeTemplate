@@ -27,6 +27,7 @@ export const useStyles = ({
       flex: 1,
       paddingBottom: safeAreaBottom ? areaInsets.bottom : 0,
       paddingTop: safeAreaTop ? areaInsets.top : 0,
+      backgroundColor: colors.primary_bg,
     },
     title: {
       ...TYPOGRAPHY.title,
