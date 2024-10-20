@@ -8,12 +8,12 @@ import { useTheme } from '@react-navigation/native';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, View } from 'react-native';
-import { createStyles } from './Login.styles';
 import useLogin from './hooks/useLogin';
 import useLoginForm from './hooks/useLoginForm';
+import { useStyles } from './styles';
 export function LoginUser() {
   const theme = useTheme() as ExtendedTheme;
-  const styles = createStyles(theme);
+  const styles = useStyles(theme);
   const [termsModal, showTermsModal] = useState(false);
   const { login } = useLogin();
   const handleLogin = (values: { email: string; password: string }) => {

@@ -22,12 +22,12 @@ export const TYPOGRAPHY = StyleSheet.create({
     fontFamily: 'MEDIUM',
     fontSize: moderateScale(16),
   },
-  title: {
-    fontFamily: 'MEDIUM',
-    fontSize: moderateScale(18),
-  },
   headerTitle: {
     fontFamily: 'SEMI_BOLD',
     fontSize: moderateScale(SPACING.l),
+  },
+  title: {
+    fontFamily: 'MEDIUM',
+    fontSize: moderateScale(18),
   },
 });

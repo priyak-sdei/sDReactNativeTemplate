@@ -7,10 +7,10 @@ import { useTheme } from '@react-navigation/native';
 import { router } from 'expo-router';
 import { View } from 'react-native';
 import useRegisterForm from './hooks/useRegisterForm';
-import createStyles from './styles';
+import useStyles from './styles';
 export function RegisterScreen() {
   const theme = useTheme() as ExtendedTheme;
-  const styles = createStyles(theme);
+  const styles = useStyles(theme);
 
   const handleLogin = (values: { email: string; password: string }) => {};
   const {
