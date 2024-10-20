@@ -25,11 +25,18 @@ export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
       color: colors.primary,
       fontFamily: 'LIGHT',
       fontSize: moderateScale(SPACING.s),
+      paddingVertical: moderateScale(5),
     },
     xsTitle: {
       color: colors.primary,
       fontFamily: 'REGULAR',
       fontSize: moderateScale(SPACING.xs),
+    },
+    xlTitle: {
+      color: colors.primary,
+      fontFamily: 'BOLD',
+      fontSize: moderateScale(SPACING.xxl),
+      paddingVertical: moderateScale(5),
     },
   });
 };

@@ -78,6 +78,7 @@ const MainLayoutContainer = ({
     <KeyboardAwareScrollView
       style={[styles.container, style]}
       showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.container}
       {...rest}
     >
       {children}

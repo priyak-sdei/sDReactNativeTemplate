@@ -36,6 +36,7 @@ interface InputProps extends TextInputProps {
   onBlur?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
   showHighLightInput?: boolean;
   labelText?: string;
+  errorText?: string;
 }
 
 export const Input = (props: InputProps): JSX.Element => {
@@ -51,6 +52,7 @@ export const Input = (props: InputProps): JSX.Element => {
     onBlur,
     ref,
     labelText,
+    errorText = '',
     ...InputProps
   } = props;
 
@@ -73,6 +75,7 @@ export const Input = (props: InputProps): JSX.Element => {
         style={[
           styles.inputContainer,
           showHighLightInput && focus ? styles.hightLightStyle : {},
+          errorText != '' ? styles.errorBorder : {},
         ]}
       >
         <View style={{}}>
@@ -110,6 +113,11 @@ export const Input = (props: InputProps): JSX.Element => {
           </TouchableOpacity>
         )}
       </View>
+      {errorText && (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>{errorText}Error</Text>
+        </View>
+      )}
     </View>
   );
 };

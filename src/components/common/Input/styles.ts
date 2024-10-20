@@ -29,7 +29,7 @@ export const createStyles = ({
     },
     inputContainer: {
       backgroundColor: colors.white,
-      borderRadius: moderateScale(SPACING.l),
+      borderRadius: moderateScale(SPACING.xs),
 
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -53,6 +53,20 @@ export const createStyles = ({
     },
     title: {
       ...TYPOGRAPHY.title,
+    },
+    errorText: {
+      color: colors.error,
+      ...TYPOGRAPHY.error,
+    },
+    errorContainer: {
+      backgroundColor: 'rgba(205,	43,	49,0.1)',
+      borderRadius: moderateScale(5),
+      padding: moderateScale(10),
+      marginVertical: moderateScale(0),
+    },
+    errorBorder: {
+      borderColor: colors.error,
+      borderWidth: 1,
     },
   });
 };

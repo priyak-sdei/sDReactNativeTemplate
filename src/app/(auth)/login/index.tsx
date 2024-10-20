@@ -2,7 +2,6 @@ import { IMAGES } from '@/src/assets/images';
 import { Header } from '@/src/components/common/Header';
 import { LoginUser } from '@/src/components/modules/auth/login/Login';
 import { MainLayout } from '@components/layouts/MainLayout';
-
 export default function Login() {
   return (
     <MainLayout>
@@ -12,7 +11,8 @@ export default function Login() {
         showLeftIcon={false}
         backgroundImage={IMAGES.header_bg}
       />
-      <MainLayout.Body variant="fixed">
+
+      <MainLayout.Body variant="scroll">
         <LoginUser />
       </MainLayout.Body>
     </MainLayout>

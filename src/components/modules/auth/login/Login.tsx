@@ -1,67 +1,91 @@
+import { IMAGES } from '@/src/assets/images';
 import { BottomSheet } from '@/src/components/common/BottomSheet';
+import { Button } from '@/src/components/common/Button';
+import { Input } from '@/src/components/common/Input';
 import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
-import { IMAGES } from '@assets/images/index';
-import { Button } from '@components/common/Button';
-import { Input } from '@components/common/Input';
 import { useTheme } from '@react-navigation/native';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Image, View } from 'react-native';
 import { createStyles } from './Login.styles';
+import useLogin from './hooks/useLogin';
+import useLoginForm from './hooks/useLoginForm';
 export function LoginUser() {
   const theme = useTheme() as ExtendedTheme;
   const styles = createStyles(theme);
   const [termsModal, showTermsModal] = useState(false);
+  const { login } = useLogin();
+  const handleLogin = (values: { email: string; password: string }) => {
+    login(values);
+  };
+  const {
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    values,
+    errors,
+    touched,
+    setFieldValue,
+  } = useLoginForm(handleLogin);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title} level={'smTitle'}>
-        {'Welcome to Fitness X'}
-      </Text>
+      <View style={styles.container_inner}>
+        <Text level={'xlTitle'}>{'Login'}</Text>
 
-      <Image
-        source={IMAGES.logoShort}
-        style={styles.logoStyle}
-        resizeMode="contain"
-      />
+        <View style={styles.midSection}>
+          <Image
+            source={IMAGES.logoFull}
+            style={styles.logoStyle}
+            resizeMode="contain"
+          />
+          <Input
+            sourceRightIcon={values.email ? IMAGES.cross_round : null}
+            placeholder="Enter email"
+            onChangeText={handleChange('email')}
+            onBlur={handleBlur('email')}
+            value={values.email}
+            errorText={touched.email && errors.email ? errors.email : ''}
+            onRightIconPress={() => {
+              setFieldValue('email', '');
+            }}
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+          <Input
+            sourceRightIcon={values.password ? IMAGES.cross_round : null}
+            secureTextEntry
+            placeholder="Enter password"
+            onChangeText={handleChange('password')}
+            onBlur={handleBlur('password')}
+            value={values.password}
+            errorText={
+              touched.password && errors.password ? errors.password : ''
+            }
+            onRightIconPress={() => {
+              setFieldValue('password', '');
+            }}
+          />
+        </View>
 
-      <Input
-        labelText="E-Mail"
-        sourceRightIcon={IMAGES.cross_round}
-        placeholder="Enter email"
-      />
-
-      <Input
-        labelText="Password"
-        sourceRightIcon={IMAGES.cross_round}
-        secureTextEntry
-        placeholder="Enter password"
-      />
-
-      <Text
-        style={styles.signUpText}
-        onPress={() => {
-          router.navigate('/(auth)/register');
-        }}
-      >
-        New Here? Sign Up
-      </Text>
-
-      <View style={styles.container} />
-
-      <Button
-        title={'Login'}
-        showLoading={false}
-        onBtnPress={() => {
-          //Proceed
-        }}
-      />
-
-      <Text style={styles.policyContainer} onPress={() => showTermsModal(true)}>
-        By continuing you agree to the Privacy Policy and Terms of use.
-      </Text>
-
+        <View style={styles.bottomSection}>
+          <Button
+            title={'Login'}
+            showLoading={false}
+            onBtnPress={handleSubmit as () => void}
+          />
+          <Text
+            style={styles.signUpText}
+            level={'smTitle'}
+            onPress={() => {
+              router.navigate('/(auth)/register');
+            }}
+          >
+            {' New Here? Sign Up'}
+          </Text>
+        </View>
+      </View>
       <BottomSheet visible={termsModal} onDismiss={() => showTermsModal(false)}>
         <Text style={styles.policyTitle}>Awesome 🎉</Text>
         <Text style={styles.policyContent}>
@@ -71,11 +95,6 @@ export function LoginUser() {
           used as a placeholder before the final copy is available.
         </Text>
       </BottomSheet>
-
-      {/* <Text>This is Login In Screen</Text>
-      <Link href="/register" style={{}}>
-        <ThemedText type="link">Go to Register screen!</ThemedText>
-      </Link> */}
     </View>
   );
 }

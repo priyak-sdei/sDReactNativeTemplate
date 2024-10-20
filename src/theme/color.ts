@@ -9,6 +9,7 @@ export const colors: ColorPalette = {
   primary_bg: '#F2EEE6',
   white: '#FFFFFF',
   black: '#000000',
+  error: '#cd2b31',
 
   blue: '#295DA1',
   blueAlpha5: 'rgba(41, 93, 161,0.5)',
@@ -21,7 +22,7 @@ export const colors: ColorPalette = {
   blackAlpha6: 'rgba(0,0,0,0.6)',
   blackAlpha07: 'rgba(0,0,0,0.07)',
   gray_tree_txt: '#747578',
-  error: '#D73758',
+
   grayBackground: '#FAFAFA',
   placeholder: '#9D9FA2',
   maroon: '#B02A4C',

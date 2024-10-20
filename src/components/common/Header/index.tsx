@@ -38,7 +38,7 @@ export const Header = ({
   sourceLeftImage = IMAGES.left_arrow,
   sourceRightImage,
   showBottomRadius = true,
-  showLeftIcon = false,
+  showLeftIcon = true,
   title,
   headerTitle,
   headerHeight = 225,
@@ -46,7 +46,7 @@ export const Header = ({
   extendedHeaderContainer = {},
   extendedHeaderImageStyle = {},
   extendedHeaderImage,
-  canGoBack = false,
+  canGoBack = true,
   onLeftPress,
 }: HeaderProps) => {
   const router = useRouter();
@@ -65,7 +65,7 @@ export const Header = ({
       <View style={styles.rowHeader}>
         <TouchableOpacity
           style={styles.leftContainer}
-          onPress={() => (canGoBack ? router.back : onLeftPress())}
+          onPress={() => (canGoBack ? router.back() : onLeftPress())}
         >
           {showLeftIcon && sourceLeftImage && (
             <Image source={sourceLeftImage} style={styles.imageStyle} />
