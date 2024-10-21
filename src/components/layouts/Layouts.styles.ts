@@ -17,7 +17,6 @@ export const useStyles = ({
   return StyleSheet.create({
     container: {
       backgroundColor: colors.primary_bg,
-      flex: 1,
     },
     innerContainer: {
       marginHorizontal: horizontalScale(SPACING.xs),
