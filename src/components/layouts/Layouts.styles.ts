@@ -17,17 +17,16 @@ export const useStyles = ({
   return StyleSheet.create({
     container: {
       backgroundColor: colors.primary_bg,
-      flex: 1,
     },
     innerContainer: {
       marginHorizontal: horizontalScale(SPACING.xs),
       marginVertical: verticalScale(SPACING.xs),
     },
     safeAreaContainer: {
+      backgroundColor: colors.primary_bg,
       flex: 1,
       paddingBottom: safeAreaBottom ? areaInsets.bottom : 0,
       paddingTop: safeAreaTop ? areaInsets.top : 0,
-      backgroundColor: colors.primary_bg,
     },
     title: {
       ...TYPOGRAPHY.title,
