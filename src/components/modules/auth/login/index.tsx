@@ -7,7 +7,7 @@ import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { useTheme } from '@react-navigation/native';
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import useLogin from './hooks/useLogin';
 import useLoginForm from './hooks/useLoginForm';
 import { useStyles } from './styles';
@@ -35,11 +35,11 @@ export function LoginUser() {
         <Text level={'xlTitle'}>{'Login'}</Text>
 
         <View style={styles.midSection}>
-          <Image
+          {/* <Image
             source={IMAGES.logoFull}
             style={styles.logoStyle}
             resizeMode="contain"
-          />
+          /> */}
           <Input
             sourceRightIcon={values.email ? IMAGES.cross_round : null}
             placeholder="Enter email"

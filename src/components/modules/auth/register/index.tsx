@@ -82,6 +82,40 @@ export function RegisterScreen() {
               setFieldValue('confirm_password', '');
             }}
           />
+          <Input
+            sourceRightIcon={
+              values.confirm_password ? IMAGES.cross_round : null
+            }
+            placeholder="Enter Confirm Password"
+            onChangeText={handleChange('confirm_password')}
+            onBlur={handleBlur('confirm_password')}
+            value={values.confirm_password}
+            errorText={
+              touched.confirm_password && errors.confirm_password
+                ? errors.confirm_password
+                : ''
+            }
+            onRightIconPress={() => {
+              setFieldValue('confirm_password', '');
+            }}
+          />
+          <Input
+            sourceRightIcon={
+              values.confirm_password ? IMAGES.cross_round : null
+            }
+            placeholder="Enter Confirm Password"
+            onChangeText={handleChange('confirm_password')}
+            onBlur={handleBlur('confirm_password')}
+            value={values.confirm_password}
+            errorText={
+              touched.confirm_password && errors.confirm_password
+                ? errors.confirm_password
+                : ''
+            }
+            onRightIconPress={() => {
+              setFieldValue('confirm_password', '');
+            }}
+          />
         </View>
         <View style={styles.bottomSection}>
           <Button

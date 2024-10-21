@@ -8,6 +8,10 @@ import {
 import { StyleSheet } from 'react-native';
 export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
   return StyleSheet.create({
+    bottomSection: {
+      flex: 0.3,
+      justifyContent: 'flex-end',
+    },
     container: {
       flex: 1,
       padding: moderateScale(SPACING.xs),
@@ -22,23 +26,19 @@ export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
       marginVertical: moderateScale(SPACING.l),
       width: horizontalScale(150),
     },
+    midSection: {
+      flex: 0.7,
+      justifyContent: 'flex-end',
+    },
     policyContent: {
       fontSize: moderateScale(20),
       paddingTop: moderateScale(40),
     },
     policyTitle: { fontSize: moderateScale(24) },
     signUpText: {
-      textAlign: 'center',
       fontFamily: 'MEDIUM',
+      textAlign: 'center',
       textDecorationLine: 'underline',
-    },
-    bottomSection: {
-      justifyContent: 'flex-end',
-      flex: 0.3,
-    },
-    midSection: {
-      flex: 0.7,
-      justifyContent: 'flex-end',
     },
   });
 };
