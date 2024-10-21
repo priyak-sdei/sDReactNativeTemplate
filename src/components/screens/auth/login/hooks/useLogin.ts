@@ -1,3 +1,5 @@
+import { router } from 'expo-router';
+
 interface FormValues {
   email: string;
   password: string;
@@ -5,7 +7,7 @@ interface FormValues {
 
 const useLogin = () => {
   const login = async (values: FormValues) => {
-    console.log(values);
+    router.replace('/(drawer)');
     return false;
   };
 

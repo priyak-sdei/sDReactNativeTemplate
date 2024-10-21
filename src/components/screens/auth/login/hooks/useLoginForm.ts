@@ -9,8 +9,8 @@ interface FormValues {
 const useLoginForm = (onSubmit: (values: FormValues) => void) => {
   const formik = useFormik<FormValues>({
     initialValues: {
-      email: '',
-      password: '',
+      email: 'priya@yopmail.com',
+      password: 'Password@123',
     },
     validationSchema: Yup.object({
       email: Yup.string()

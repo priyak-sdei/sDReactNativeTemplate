@@ -1,6 +1,6 @@
 import { IMAGES } from '@/src/assets/images';
 import { Header } from '@/src/components/common/Header';
-import { LoginUser } from '@/src/components/modules/auth/login';
+import { LoginUser } from '@/src/components/screens/auth/login';
 import { MainLayout } from '@components/layouts/MainLayout';
 export default function Login() {
   return (

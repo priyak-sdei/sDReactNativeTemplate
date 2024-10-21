@@ -1,5 +1,5 @@
 import { Header } from '@/src/components/common/Header';
-import { PasswordForgot } from '@/src/components/modules/auth/forgot-password';
+import { PasswordForgot } from '@/src/components/screens/auth/forgot-password';
 import { MainLayout } from '@components/layouts/MainLayout';
 import styles from '../../styles';
 export default function ForgotPassword() {

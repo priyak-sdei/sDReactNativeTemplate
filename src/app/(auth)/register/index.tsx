@@ -1,6 +1,6 @@
 import { IMAGES } from '@/src/assets/images';
 import { Header } from '@/src/components/common/Header';
-import { RegisterScreen } from '@/src/components/modules/auth/register';
+import { RegisterScreen } from '@/src/components/screens/auth/register';
 import { MainLayout } from '@components/layouts/MainLayout';
 
 export default function Register() {
