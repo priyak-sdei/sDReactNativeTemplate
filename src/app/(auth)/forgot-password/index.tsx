@@ -1,19 +1,17 @@
-import { IMAGES } from '@/src/assets/images';
 import { Header } from '@/src/components/common/Header';
-import { LoginUser } from '@/src/components/modules/auth/login';
+import { PasswordForgot } from '@/src/components/modules/auth/forgot-password';
 import { MainLayout } from '@components/layouts/MainLayout';
+import styles from '../../styles';
 export default function ForgotPassword() {
   return (
     <MainLayout>
       <Header
-        extendedHeaderImage={IMAGES.logoFull}
-        canGoBack={false}
-        showLeftIcon={false}
-        backgroundImage={IMAGES.header_bg}
+        headerHeight={130}
+        showBottomRadius={false}
+        customHeaderContainer={styles.transparentHeader}
       />
-
       <MainLayout.Body variant="scroll">
-        <LoginUser />
+        <PasswordForgot />
       </MainLayout.Body>
     </MainLayout>
   );

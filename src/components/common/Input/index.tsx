@@ -75,7 +75,7 @@ export const Input = (props: InputProps): JSX.Element => {
         style={[
           styles.inputContainer,
           showHighLightInput && focus ? styles.hightLightStyle : {},
-          errorText != '' ? styles.errorBorder : {},
+          errorText !== '' ? styles.errorBorder : {},
         ]}
       >
         <View style={{}}>

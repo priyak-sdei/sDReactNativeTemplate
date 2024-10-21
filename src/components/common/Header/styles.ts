@@ -29,6 +29,12 @@ export const useStyles = (
       borderBottomLeftRadius: moderateScale(SPACING.l),
       borderBottomRightRadius: moderateScale(SPACING.l),
     },
+    extendedHeaderStyle: {
+      alignItems: 'center',
+      flex: 1,
+      justifyContent: 'flex-end',
+      paddingVertical: moderateScale(SPACING.s),
+    },
     headerTitle: {
       ...TYPOGRAPHY.headerTitle,
       color: colors.white,
@@ -40,20 +46,21 @@ export const useStyles = (
     leftContainer: {
       flex: 0.5,
     },
+    logoImage: {
+      height: moderateScale(SPACING.xxxl),
+      width: moderateScale(150),
+    },
     rightContainer: {
       alignItems: 'flex-end',
       flex: 0.5,
     },
-    logoImage: {
-      width: moderateScale(150),
-      height: moderateScale(SPACING.xxxl),
-    },
     rowHeader: {
+      alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingBottom: moderateScale(SPACING.s),
-      alignItems: 'center',
     },
+
     title: {
       ...TYPOGRAPHY.title,
       color: colors.white,
@@ -61,13 +68,6 @@ export const useStyles = (
       fontFamily: 'SEMI_BOLD',
       fontSize: moderateScale(SPACING.l),
       textAlign: 'center',
-    },
-
-    extendedHeaderStyle: {
-      flex: 1,
-      justifyContent: 'flex-end',
-      paddingVertical: moderateScale(SPACING.s),
-      alignItems: 'center',
     },
   });
 };

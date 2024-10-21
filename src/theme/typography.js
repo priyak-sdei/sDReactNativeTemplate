@@ -7,24 +7,24 @@ export const TYPOGRAPHY = StyleSheet.create({
   },
   error: {
     fontFamily: 'REGULAR',
-    fontSize: moderateScale(14),
+    fontSize: moderateScale(12),
+  },
+  headerTitle: {
+    fontFamily: 'SEMI_BOLD',
+    fontSize: moderateScale(SPACING.l),
   },
   label: {
     fontFamily: 'REGULAR',
     fontSize: moderateScale(16),
   },
+
   text: {
     fontFamily: 'LIGHT',
     fontSize: moderateScale(16),
   },
-
   textInput: {
     fontFamily: 'MEDIUM',
     fontSize: moderateScale(16),
-  },
-  headerTitle: {
-    fontFamily: 'SEMI_BOLD',
-    fontSize: moderateScale(SPACING.l),
   },
   title: {
     fontFamily: 'MEDIUM',

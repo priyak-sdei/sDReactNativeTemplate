@@ -25,6 +25,7 @@ type HeaderProps = {
   headerTitle?: string;
   headerHeight?: DimensionValue;
   leftIcon?: ReactElement;
+  customHeaderContainer?: StyleProp<ViewStyle>;
   extendedHeaderContainer?: StyleProp<ViewStyle>;
   extendedHeaderImage?: ImageSourcePropType;
   extendedHeaderImageStyle?: StyleProp<ImageStyle>;
@@ -45,6 +46,7 @@ export const Header = ({
   backgroundImage,
   extendedHeaderContainer = {},
   extendedHeaderImageStyle = {},
+  customHeaderContainer = {},
   extendedHeaderImage,
   canGoBack = true,
   onLeftPress,
@@ -56,10 +58,14 @@ export const Header = ({
   return (
     <ImageBackground
       source={backgroundImage}
-      imageStyle={[styles.containerHeaderRound, { tintColor: colors.white }]}
+      imageStyle={[
+        showBottomRadius && styles.containerHeaderRound,
+        { tintColor: colors.white },
+      ]}
       style={[
         styles.containerHeader,
-        showBottomRadius ? styles.containerHeaderRound : {},
+        showBottomRadius && styles.containerHeaderRound,
+        customHeaderContainer,
       ]}
     >
       <View style={styles.rowHeader}>

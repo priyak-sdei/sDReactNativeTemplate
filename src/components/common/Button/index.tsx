@@ -8,7 +8,13 @@ import { colors } from '@/src/theme';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { useTheme } from '@react-navigation/native';
 import { ReactNode } from 'react';
-import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
+import {
+  ActivityIndicator,
+  StyleProp,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { Text } from '../Text';
 import useStyles from './styles';
 interface ButtonProps {
@@ -17,6 +23,7 @@ interface ButtonProps {
   rightIcon?: ReactNode;
   showLoading?: boolean;
   onBtnPress: () => void;
+  customContainerStyle?: StyleProp<ViewStyle>;
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
@@ -26,13 +33,17 @@ export const Button = (props: ButtonProps): JSX.Element => {
     showLoading = false,
     rightIcon = '',
     onBtnPress,
+    customContainerStyle = {},
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
   const styles = useStyles(theme);
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onBtnPress}>
+    <TouchableOpacity
+      style={[styles.container, customContainerStyle]}
+      onPress={onBtnPress}
+    >
       <View style={styles.innerContainer}>
         <View style={styles.leftContainer}>{leftIcon}</View>
         <View style={styles.middleContainer}>

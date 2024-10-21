@@ -7,7 +7,6 @@ export default function Login() {
     <MainLayout>
       <Header
         extendedHeaderImage={IMAGES.logoFull}
-        canGoBack={false}
         showLeftIcon={false}
         backgroundImage={IMAGES.header_bg}
       />

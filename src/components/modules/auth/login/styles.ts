@@ -19,6 +19,11 @@ export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
     container_inner: {
       flex: 1,
     },
+    forgotPassword: {
+      fontFamily: 'MEDIUM',
+      textAlign: 'right',
+      textDecorationLine: 'underline',
+    },
     logoStyle: {
       alignSelf: 'center',
       height: verticalScale(120),

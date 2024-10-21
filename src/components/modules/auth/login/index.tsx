@@ -67,6 +67,15 @@ export function LoginUser() {
               setFieldValue('password', '');
             }}
           />
+          <Text
+            style={styles.forgotPassword}
+            level={'smTitle'}
+            onPress={() => {
+              router.navigate('/(auth)/forgot-password');
+            }}
+          >
+            {'Forgot Password?'}
+          </Text>
         </View>
 
         <View style={styles.bottomSection}>

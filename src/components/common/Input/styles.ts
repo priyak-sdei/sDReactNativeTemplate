@@ -19,6 +19,19 @@ export const createStyles = ({
     container: {
       paddingVertical: SPACING.xxxxs,
     },
+    errorBorder: {
+      borderColor: colors.error,
+      borderWidth: 1,
+    },
+    errorContainer: {
+      borderRadius: moderateScale(5),
+      marginVertical: moderateScale(0),
+      padding: moderateScale(5),
+    },
+    errorText: {
+      color: colors.error,
+      ...TYPOGRAPHY.error,
+    },
     hightLightStyle: {
       borderColor: colors.primary,
       borderWidth: moderateScale(1),
@@ -53,20 +66,6 @@ export const createStyles = ({
     },
     title: {
       ...TYPOGRAPHY.title,
-    },
-    errorText: {
-      color: colors.error,
-      ...TYPOGRAPHY.error,
-    },
-    errorContainer: {
-      backgroundColor: 'rgba(205,	43,	49,0.1)',
-      borderRadius: moderateScale(5),
-      padding: moderateScale(10),
-      marginVertical: moderateScale(0),
-    },
-    errorBorder: {
-      borderColor: colors.error,
-      borderWidth: 1,
     },
   });
 };
