@@ -12,7 +12,9 @@ import {
 } from '@gorhom/bottom-sheet';
 import { useTheme } from '@react-navigation/native';
 import { ReactNode, useEffect, useRef } from 'react';
+import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Text } from '../Text';
 import createStyles from './styles';
 interface BottomSheetProps extends BottomSheetModalProps {
   visible: boolean;
@@ -43,7 +45,10 @@ export const BottomSheet = (props: BottomSheetProps): JSX.Element => {
       {...props}
     >
       <BottomSheetView style={styles.contentContainer}>
-        {children}
+        <View>
+          <Text>Hiii</Text>
+        </View>
+        {/* {children} */}
       </BottomSheetView>
     </BottomSheetModal>
   );

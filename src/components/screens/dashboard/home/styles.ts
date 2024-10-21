@@ -18,7 +18,7 @@ import { StyleSheet } from 'react-native';
 export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
   return StyleSheet.create({
     container: {
-      backgroundColor: colors.white,
+      backgroundColor: colors.error,
       flex: 1,
       justifyContent: 'center',
       padding: moderateScale(SPACING.xs),
@@ -27,6 +27,11 @@ export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
       marginHorizontal: horizontalScale(SPACING.xs),
       marginVertical: verticalScale(SPACING.xs),
     },
+    policyContent: {
+      fontSize: moderateScale(20),
+      paddingTop: moderateScale(40),
+    },
+    policyTitle: { fontSize: moderateScale(24) },
     title: {
       ...TYPOGRAPHY.title,
     },
