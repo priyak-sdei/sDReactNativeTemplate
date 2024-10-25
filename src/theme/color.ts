@@ -10,6 +10,7 @@ export const colors: ColorPalette = {
   white: '#FFFFFF',
   black: '#000000',
   error: '#cd2b31',
+  trans: 'transparent',
 
   blue: '#295DA1',
   blueAlpha5: 'rgba(41, 93, 161,0.5)',

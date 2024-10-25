@@ -22,14 +22,14 @@ export const createStyles = (
   return StyleSheet.create({
     container: {},
     contentContainer: {
-      alignItems: 'center',
+      // alignItems: 'center',
       backgroundColor: colors.white,
-      flex: 1,
       paddingBottom: insets.bottom,
       paddingHorizontal: moderateScale(20),
     },
     title: {
       ...TYPOGRAPHY.title,
+      color: colors.primary,
     },
   });
 };

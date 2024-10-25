@@ -11,6 +11,7 @@ import { ReactNode } from 'react';
 import {
   ActivityIndicator,
   StyleProp,
+  TextStyle,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -24,6 +25,7 @@ interface ButtonProps {
   showLoading?: boolean;
   onBtnPress: () => void;
   customContainerStyle?: StyleProp<ViewStyle>;
+  customTitle?: StyleProp<TextStyle>;
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
@@ -34,6 +36,7 @@ export const Button = (props: ButtonProps): JSX.Element => {
     rightIcon = '',
     onBtnPress,
     customContainerStyle = {},
+    customTitle = {},
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
@@ -50,7 +53,7 @@ export const Button = (props: ButtonProps): JSX.Element => {
           {showLoading ? (
             <ActivityIndicator color={colors.white} size={'small'} />
           ) : (
-            <Text style={styles.title}>{title}</Text>
+            <Text style={[styles.title, customTitle]}>{title}</Text>
           )}
         </View>
         <View style={styles.rightContainer}>{rightIcon}</View>

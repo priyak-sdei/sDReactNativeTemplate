@@ -18,7 +18,7 @@ import { StyleSheet } from 'react-native';
 export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
   return StyleSheet.create({
     container: {
-      backgroundColor: colors.error,
+      //backgroundColor: colors.error,
       flex: 1,
       justifyContent: 'center',
       padding: moderateScale(SPACING.xs),

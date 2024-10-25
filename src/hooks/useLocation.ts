@@ -32,7 +32,6 @@ const useLocation = () => {
         latitude: currentLocation.coords.latitude,
         longitude: currentLocation.coords.longitude,
       });
-      console.log(currentLocation, 'currentLocation......');
     } catch (error) {
       setErrorMsg('Error fetching location: ' + error.message);
     }
@@ -43,6 +42,8 @@ const useLocation = () => {
 
     if (permissionGranted) {
       await fetchLocation();
+    } else {
+      //Linking.openSettings();
     }
     setIsLoading(false);
   };

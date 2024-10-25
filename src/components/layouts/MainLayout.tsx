@@ -1,3 +1,8 @@
+import { BottomSheet } from '@/src/components/common/BottomSheet';
+import { ConfirmationAlert } from '@/src/components/common/ConfirmationAlert';
+import { ExtendedTheme } from '@/src/types/ColorPalette';
+import { useTheme } from '@react-navigation/native';
+import { ReactNode } from 'react';
 import {
   KeyboardAvoidingView,
   KeyboardAvoidingViewProps,
@@ -8,10 +13,6 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-
-import { ExtendedTheme } from '@/src/types/ColorPalette';
-import { useTheme } from '@react-navigation/native';
-import { ReactNode } from 'react';
 import {
   KeyboardAwareScrollView,
   KeyboardAwareScrollViewProps,
@@ -73,6 +74,9 @@ const MainLayoutContainer = ({
       {...rest}
     >
       {children}
+      <BottomSheet visible={true} onDismiss={() => {}}>
+        <ConfirmationAlert />
+      </BottomSheet>
     </KeyboardAvoidingView>
   ) : (
     <KeyboardAwareScrollView
@@ -81,6 +85,9 @@ const MainLayoutContainer = ({
       {...rest}
     >
       {children}
+      <BottomSheet visible={true} onDismiss={() => {}}>
+        <ConfirmationAlert />
+      </BottomSheet>
     </KeyboardAwareScrollView>
   );
 };

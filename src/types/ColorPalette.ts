@@ -5,6 +5,7 @@ export interface ColorPalette {
   subTitleColor: string;
   lightTextColor: string;
   primary_bg: string;
+  trans: string;
   white: string;
   black: string;
   blue: string;

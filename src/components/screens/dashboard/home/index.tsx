@@ -7,6 +7,7 @@
 import { Button } from '@/src/components/common/Button';
 
 import { BottomSheet } from '@/src/components/common/BottomSheet';
+import { ConfirmationAlert } from '@/src/components/common/ConfirmationAlert';
 import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import useLocation from '@hooks/useLocation';
@@ -36,14 +37,8 @@ export const HomePage = (props: indexProps): JSX.Element => {
           getLocation();
         }}
       ></Button>
-      <BottomSheet visible={termsModal} onDismiss={() => showTermsModal(false)}>
-        <Text style={styles.policyTitle}>Awesome 🎉</Text>
-        <Text style={styles.policyContent}>
-          In publishing and graphic design, Lorem ipsum is a placeholder text
-          commonly used to demonstrate the visual form of a document or a
-          typeface without relying on meaningful content. Lorem ipsum may be
-          used as a placeholder before the final copy is available.
-        </Text>
+      <BottomSheet visible={false} onDismiss={() => showTermsModal(false)}>
+        <ConfirmationAlert />
       </BottomSheet>
     </View>
   );

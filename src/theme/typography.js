@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { moderateScale, SPACING } from './index';
 export const TYPOGRAPHY = StyleSheet.create({
+  alertTitle: {
+    fontFamily: 'BOLD',
+    fontSize: moderateScale(SPACING.m),
+  },
   btnText: {
     fontFamily: 'SEMI_BOLD',
     fontSize: moderateScale(18),
@@ -13,11 +17,15 @@ export const TYPOGRAPHY = StyleSheet.create({
     fontFamily: 'SEMI_BOLD',
     fontSize: moderateScale(SPACING.l),
   },
+
   label: {
     fontFamily: 'REGULAR',
     fontSize: moderateScale(16),
   },
-
+  sub_title: {
+    fontFamily: 'MEDIUM',
+    fontSize: moderateScale(SPACING.xs),
+  },
   text: {
     fontFamily: 'LIGHT',
     fontSize: moderateScale(16),
