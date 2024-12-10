@@ -6,13 +6,13 @@ interface FormValues {
 }
 
 const useLogin = () => {
-  const login = async (values: FormValues) => {
+  const onLoginSubmit = async (values: FormValues) => {
     router.replace('/(drawer)');
     return false;
   };
 
   return {
-    login,
+    onLoginSubmit,
   };
 };
 

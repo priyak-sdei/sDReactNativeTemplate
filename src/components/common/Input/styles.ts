@@ -21,16 +21,18 @@ export const createStyles = ({
     },
     errorBorder: {
       borderColor: colors.error,
-      borderWidth: 1,
+      borderWidth: moderateScale(0.5),
     },
     errorContainer: {
       borderRadius: moderateScale(5),
       marginVertical: moderateScale(0),
       padding: moderateScale(5),
+      paddingTop: 0,
     },
     errorText: {
       color: colors.error,
       ...TYPOGRAPHY.error,
+      fontSize: moderateScale(SPACING.xxs),
     },
     hightLightStyle: {
       borderColor: colors.primary,
@@ -38,11 +40,10 @@ export const createStyles = ({
     },
     innerContainer: {
       flex: 1,
-      paddingHorizontal: moderateScale(SPACING.xxxs),
     },
     inputContainer: {
       backgroundColor: colors.white,
-      borderRadius: moderateScale(SPACING.xs),
+      borderRadius: moderateScale(SPACING.xxxxs),
 
       flexDirection: 'row',
       justifyContent: 'space-between',

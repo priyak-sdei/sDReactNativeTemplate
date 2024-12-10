@@ -10,13 +10,21 @@ import { SPACING, moderateScale, verticalScale } from '@theme/index';
 import { TYPOGRAPHY } from '@theme/typography';
 import { StyleSheet } from 'react-native';
 
-export const useStyles = ({ colors }: { colors: ExtendedTheme['colors'] }) => {
+export const useStyles = (
+  {
+    colors,
+  }: {
+    colors: ExtendedTheme['colors'];
+  },
+  disabled: boolean,
+) => {
   return StyleSheet.create({
     container: {
       backgroundColor: colors.primary,
-      borderRadius: moderateScale(SPACING.s),
+      borderRadius: moderateScale(SPACING.xxxxs),
       height: verticalScale(55),
       justifyContent: 'center',
+      opacity: disabled ? 0.6 : 1,
       padding: moderateScale(SPACING.s),
     },
     innerContainer: {

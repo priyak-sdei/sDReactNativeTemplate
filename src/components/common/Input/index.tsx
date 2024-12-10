@@ -115,7 +115,7 @@ export const Input = (props: InputProps): JSX.Element => {
       </View>
       {errorText && (
         <View style={styles.errorContainer}>
-          <Text style={styles.errorText}>{errorText}Error</Text>
+          <Text style={styles.errorText}>{errorText}</Text>
         </View>
       )}
     </View>

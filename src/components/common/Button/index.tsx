@@ -26,6 +26,7 @@ interface ButtonProps {
   onBtnPress: () => void;
   customContainerStyle?: StyleProp<ViewStyle>;
   customTitle?: StyleProp<TextStyle>;
+  disabled?: boolean;
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
@@ -37,13 +38,15 @@ export const Button = (props: ButtonProps): JSX.Element => {
     onBtnPress,
     customContainerStyle = {},
     customTitle = {},
+    disabled = false,
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
-  const styles = useStyles(theme);
+  const styles = useStyles(theme, disabled);
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       style={[styles.container, customContainerStyle]}
       onPress={onBtnPress}
     >

@@ -12,7 +12,7 @@ import { useTheme } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Text } from '../Text';
-import { DropDownPicker } from './DropDownPicker';
+import DropDownPicker from './DropDownPicker';
 import createStyles from './styles';
 
 interface dropDownOptions {

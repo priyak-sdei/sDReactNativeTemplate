@@ -6,8 +6,6 @@
 
 import { Button } from '@/src/components/common/Button';
 
-import { BottomSheet } from '@/src/components/common/BottomSheet';
-import { ConfirmationAlert } from '@/src/components/common/ConfirmationAlert';
 import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import useLocation from '@hooks/useLocation';
@@ -37,9 +35,9 @@ export const HomePage = (props: indexProps): JSX.Element => {
           getLocation();
         }}
       ></Button>
-      <BottomSheet visible={false} onDismiss={() => showTermsModal(false)}>
+      {/* <BottomSheet visible={false} onDismiss={() => showTermsModal(false)}>
         <ConfirmationAlert />
-      </BottomSheet>
+      </BottomSheet> */}
     </View>
   );
 };

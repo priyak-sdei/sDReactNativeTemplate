@@ -1,5 +1,5 @@
-import { IMAGES } from '@/src/assets/images';
 import { Button } from '@/src/components/common/Button';
+import { DropDownSelector } from '@/src/components/common/DropDown/DropDownSelector';
 import { Input } from '@/src/components/common/Input';
 import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
@@ -20,40 +20,31 @@ export function RegisterScreen() {
     values,
     errors,
     touched,
-    setFieldValue,
+    isValid,
   } = useRegisterForm(handleLogin);
 
   return (
     <View style={styles.container}>
       <View style={styles.container_inner}>
-        <Text level={'xlTitle'}>{'Register'}</Text>
-        <View style={styles.midSection}>
+        <Text level={'lgTitle'}>{'Register'}</Text>
+        <View style={styles.inputContainer}>
           <Input
-            sourceRightIcon={values.name ? IMAGES.cross_round : null}
             placeholder="Enter name"
             onChangeText={handleChange('name')}
             onBlur={handleBlur('name')}
             value={values.name}
             errorText={touched.name && errors.name ? errors.name : ''}
-            onRightIconPress={() => {
-              setFieldValue('name', '');
-            }}
           />
           <Input
-            sourceRightIcon={values.email ? IMAGES.cross_round : null}
             placeholder="Enter email"
             onChangeText={handleChange('email')}
             onBlur={handleBlur('email')}
             value={values.email}
             errorText={touched.email && errors.email ? errors.email : ''}
-            onRightIconPress={() => {
-              setFieldValue('email', '');
-            }}
             keyboardType="email-address"
             autoCapitalize="none"
           />
           <Input
-            sourceRightIcon={values.password ? IMAGES.cross_round : null}
             placeholder="Enter Password"
             onChangeText={handleChange('password')}
             onBlur={handleBlur('password')}
@@ -61,14 +52,8 @@ export function RegisterScreen() {
             errorText={
               touched.password && errors.password ? errors.password : ''
             }
-            onRightIconPress={() => {
-              setFieldValue('password', '');
-            }}
           />
           <Input
-            sourceRightIcon={
-              values.confirm_password ? IMAGES.cross_round : null
-            }
             placeholder="Enter Confirm Password"
             onChangeText={handleChange('confirm_password')}
             onBlur={handleBlur('confirm_password')}
@@ -78,62 +63,46 @@ export function RegisterScreen() {
                 ? errors.confirm_password
                 : ''
             }
-            onRightIconPress={() => {
-              setFieldValue('confirm_password', '');
+          />
+          <DropDownSelector
+            label="Select Gender"
+            options={[{ key: 'Male', value: '1' }]}
+            onOptionSelect={value => {
+              console.log(value);
             }}
           />
-          <Input
-            sourceRightIcon={
-              values.confirm_password ? IMAGES.cross_round : null
-            }
-            placeholder="Enter Confirm Password"
-            onChangeText={handleChange('confirm_password')}
-            onBlur={handleBlur('confirm_password')}
-            value={values.confirm_password}
-            errorText={
-              touched.confirm_password && errors.confirm_password
-                ? errors.confirm_password
-                : ''
-            }
-            onRightIconPress={() => {
-              setFieldValue('confirm_password', '');
-            }}
-          />
-          <Input
-            sourceRightIcon={
-              values.confirm_password ? IMAGES.cross_round : null
-            }
-            placeholder="Enter Confirm Password"
-            onChangeText={handleChange('confirm_password')}
-            onBlur={handleBlur('confirm_password')}
-            value={values.confirm_password}
-            errorText={
-              touched.confirm_password && errors.confirm_password
-                ? errors.confirm_password
-                : ''
-            }
-            onRightIconPress={() => {
-              setFieldValue('confirm_password', '');
-            }}
-          />
-        </View>
-        <View style={styles.bottomSection}>
-          <Button
-            title={'Register'}
-            showLoading={false}
-            onBtnPress={handleSubmit as () => void}
-          />
-          <Text
-            style={styles.signUpText}
-            level={'smTitle'}
-            onPress={() => {
-              router.back();
-            }}
-          >
-            {' Already Registered? Sign In'}
-          </Text>
+          <View style={styles.bottomSection}>
+            <Button
+              disabled={!isValid}
+              title={'Register'}
+              showLoading={false}
+              onBtnPress={isValid && (handleSubmit as () => void)}
+              //    onBtnPress={handleSubmit as () => void}
+            />
+            <Text
+              style={styles.signUpText}
+              level={'smTitle'}
+              onPress={() => {
+                router.back();
+              }}
+            >
+              {' Already Registered? Sign In'}
+            </Text>
+          </View>
         </View>
       </View>
+      {/* 
+        
+        <View style={styles.midSection}>
+        
+        
+       
+       
+        
+       
+        </View>
+       
+      </View> */}
     </View>
   );
 }

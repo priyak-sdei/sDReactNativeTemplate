@@ -1,5 +1,3 @@
-import { BottomSheet } from '@/src/components/common/BottomSheet';
-import { ConfirmationAlert } from '@/src/components/common/ConfirmationAlert';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { useTheme } from '@react-navigation/native';
 import { ReactNode } from 'react';
@@ -74,9 +72,9 @@ const MainLayoutContainer = ({
       {...rest}
     >
       {children}
-      <BottomSheet visible={true} onDismiss={() => {}}>
+      {/* <BottomSheet visible={true} onDismiss={() => {}}>
         <ConfirmationAlert />
-      </BottomSheet>
+      </BottomSheet> */}
     </KeyboardAvoidingView>
   ) : (
     <KeyboardAwareScrollView
@@ -85,9 +83,9 @@ const MainLayoutContainer = ({
       {...rest}
     >
       {children}
-      <BottomSheet visible={true} onDismiss={() => {}}>
+      {/* <BottomSheet visible={true} onDismiss={() => {}}>
         <ConfirmationAlert />
-      </BottomSheet>
+      </BottomSheet> */}
     </KeyboardAwareScrollView>
   );
 };

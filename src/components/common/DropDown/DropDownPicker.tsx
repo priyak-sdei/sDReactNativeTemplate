@@ -27,7 +27,7 @@ interface DropDownOptions {
   value: string;
 }
 
-export const DropDownPicker = (props: DropDownPickerProps): JSX.Element => {
+const DropDownPicker = (props: DropDownPickerProps): JSX.Element => {
   const {
     showPicker = false,
     hideModal,
@@ -85,3 +85,5 @@ export const DropDownPicker = (props: DropDownPickerProps): JSX.Element => {
     </Modal>
   );
 };
+
+export default DropDownPicker;

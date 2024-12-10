@@ -18,7 +18,7 @@ export const createStyles = ({
   return StyleSheet.create({
     container: {
       backgroundColor: colors.white,
-      borderRadius: moderateScale(SPACING.l),
+      borderRadius: moderateScale(SPACING.xxxxs),
       flexDirection: 'row',
       justifyContent: 'space-between',
       marginVertical: moderateScale(SPACING.xxs),

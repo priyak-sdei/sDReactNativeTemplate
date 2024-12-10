@@ -70,6 +70,7 @@ export const Header = ({
     >
       <View style={styles.rowHeader}>
         <TouchableOpacity
+          hitSlop={10}
           style={styles.leftContainer}
           onPress={() => (canGoBack ? router.back() : onLeftPress())}
         >
