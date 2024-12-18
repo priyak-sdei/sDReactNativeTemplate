@@ -33,6 +33,7 @@ interface DropDownSelectorProps {
   onOptionSelect: (data: dropDownOptions) => void;
   errorMessage?: string;
   multiSelection?: boolean;
+  labelField?: string;
 }
 
 export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
@@ -51,6 +52,7 @@ export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
     errorMessage = '',
     multiSelection = false,
     selectedValue,
+    labelField = 'value',
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
@@ -94,7 +96,7 @@ export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
               {selectedItems.length === 0
                 ? ''
                 : selectedItems.length === 1
-                ? selectedItems[0].value
+                ? selectedItems[0][labelField]
                 : `${selectedItems.length} selected`}
             </Text>
             <FontAwesome6 name="angle-right" size={22} color={colors.primary} />
@@ -102,8 +104,8 @@ export const DropDownSelector = (props: DropDownSelectorProps): JSX.Element => {
         </View>
       </TouchableOpacity>
       {errorMessage && <Text style={styles.errorStyle}>{errorMessage}</Text>}
-
       <DropDownPicker
+        labelField={labelField}
         multiSelection={multiSelection}
         options={options}
         selectedOption={selectedItems}

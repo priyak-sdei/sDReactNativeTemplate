@@ -6,12 +6,12 @@
 
 import { colors } from '@/src/theme';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { FontAwesome6 } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useTheme } from '@react-navigation/native';
 import { FlatList, Modal, TouchableOpacity, View } from 'react-native';
 import { Button } from '../Button';
-import { Label } from '../Text';
+import { Text } from '../Text';
 import createStyles from './styles';
 
 interface DropDownPickerProps {
@@ -21,6 +21,7 @@ interface DropDownPickerProps {
   options: DropDownOptions[];
   selectedOption: DropDownOptions[];
   multiSelection: boolean;
+  labelField?: string;
 }
 interface DropDownOptions {
   key: string;
@@ -35,6 +36,7 @@ const DropDownPicker = (props: DropDownPickerProps): JSX.Element => {
     selectedOption = [],
     onItemSelected,
     multiSelection = false,
+    labelField = 'value',
   } = props;
 
   const theme = useTheme() as ExtendedTheme;
@@ -47,7 +49,7 @@ const DropDownPicker = (props: DropDownPickerProps): JSX.Element => {
         if (!multiSelection) hideModal();
       }}
     >
-      <Label style={styles.labelStyle}>{item.value}</Label>
+      <Text style={styles.labelStyle}>{item[labelField]}</Text>
       {selectedOption &&
         selectedOption.some(selected => selected.value === item.value) && (
           <Ionicons name="checkmark-sharp" size={24} color="black" />
@@ -67,7 +69,7 @@ const DropDownPicker = (props: DropDownPickerProps): JSX.Element => {
           onPress={() => hideModal()}
         >
           <FontAwesome6 name="chevron-left" size={24} color={colors.primary} />
-          <Label style={styles.headingTitle}>Select Value</Label>
+          <Text style={styles.headingTitle}>Select Value</Text>
         </TouchableOpacity>
         <View style={styles.pickerContainer}>
           <FlatList data={options} renderItem={renderItem} numColumns={1} />

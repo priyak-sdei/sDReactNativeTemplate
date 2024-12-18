@@ -66,7 +66,11 @@ export function RegisterScreen() {
           />
           <DropDownSelector
             label="Select Gender"
-            options={[{ key: 'Male', value: '1' }]}
+            labelField="key"
+            options={[
+              { key: 'Male', value: '1' },
+              { key: 'Female', value: '2' },
+            ]}
             onOptionSelect={value => {
               console.log(value);
             }}

@@ -79,9 +79,9 @@ export const createStyles = ({
     pickerOuterContainer: {
       backgroundColor: colors.primary_bg,
       flex: 1,
-      marginTop: moderateScale(20),
       padding: moderateScale(15),
       paddingBottom: moderateScale(20),
+      paddingTop: moderateScale(50),
     },
     valueStyle: {
       color: colors.secondary,
