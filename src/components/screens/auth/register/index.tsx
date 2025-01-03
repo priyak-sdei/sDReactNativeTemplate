@@ -1,6 +1,7 @@
 import { Button } from '@/src/components/common/Button';
 import { DropDownSelector } from '@/src/components/common/DropDown/DropDownSelector';
 import { Input } from '@/src/components/common/Input';
+import { SearchDropDown } from '@/src/components/common/SearchDropDown';
 import { Text } from '@/src/components/common/Text';
 import { ExtendedTheme } from '@/src/types/ColorPalette';
 import { useTheme } from '@react-navigation/native';
@@ -75,13 +76,18 @@ export function RegisterScreen() {
               console.log(value);
             }}
           />
+
+          <SearchDropDown
+            title={'Register'}
+            showLoading={false}
+            onBtnPress={isValid && (handleSubmit as () => void)}
+          />
           <View style={styles.bottomSection}>
             <Button
               disabled={!isValid}
               title={'Register'}
               showLoading={false}
               onBtnPress={isValid && (handleSubmit as () => void)}
-              //    onBtnPress={handleSubmit as () => void}
             />
             <Text
               style={styles.signUpText}
